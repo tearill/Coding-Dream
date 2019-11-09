@@ -1,10 +1,15 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+@import 'styles/reset.wxss';
+@import 'styles/hero.wxss';
+@import 'styles/button.wxss';
+@import 'styles/card.wxss';
+@import 'styles/cover.wxss';
+@import 'styles/spec.wxss';
+@import 'styles/action.wxss';
+@import 'styles/story.wxss';
+
+page {
+  background-color: #f8f8f8;
+}
+.section {
+  height: 100vh;
+}
