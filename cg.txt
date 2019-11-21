@@ -2,3 +2,6 @@
 等开发完成之后，再将代码合并到主分支。
 git branch xxx 创建一个xxx分支
 git checkout xxx 切换到xxx分支
+git checkout -b xxx 创建并切换到xxx新分支
+
+bug fixed
