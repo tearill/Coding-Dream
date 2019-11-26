@@ -1,0 +1,2 @@
+<!--index.wxml-->
+<button bindtap="http">http</button>
