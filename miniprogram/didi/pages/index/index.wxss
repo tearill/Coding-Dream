@@ -27,8 +27,6 @@ page{
   width: 30rpx;
   z-index: 999;
   background-color: #ffffffff;
- 
-  
 }
 .nav-me{
   left: 0;
