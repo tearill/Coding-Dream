@@ -12,7 +12,7 @@ var threeSum = function(nums) {
                     result.push([nums[i], nums[j], nums[k]]);
             }
         }
-    }       
+    }        
     return result;
 };
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
