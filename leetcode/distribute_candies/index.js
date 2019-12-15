@@ -6,7 +6,7 @@
 var distributeCandies = (candies) => {
     let count = 0;
     // 1. 种类数, unique
-    // 出现过的?
+    // 出现过的? 
     let obj = {}; //对象字面量
     // candies.forEach(item => {
     //     console.log(item);
