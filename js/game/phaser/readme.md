@@ -13,7 +13,7 @@
 - 变量一定有作用域，window 全局，{ 块级作用域 }
   局部作用域 function func() { let a = 1; }
 
-
+ 
 - 2D游戏开发，网易大厂h5
   网页2D游戏 canvas
   - Game 对象，总管
