@@ -14,7 +14,7 @@ console.log(typeof fn); // null
 fn = () => {};
 console.log(typeof fn); // function
 const unique = (arr) => {
-  let res = []; //数组
+  let res = []; //数组 
   for(var i = 0, arrLen = arr.length; i < arrLen; i++) {
       var current = arr[i]; //基地 局部变量，缓存值
       if (res.indexOf(current) == -1) {
