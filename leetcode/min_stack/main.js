@@ -14,7 +14,7 @@ function MinStack() {
 MinStack.prototype.push = function(x) {
     if(x < this.min) {
         this.min = x;
-    }
+    } 
     return this.stack.push(x);
 }
 MinStack.prototype.pop = function() {

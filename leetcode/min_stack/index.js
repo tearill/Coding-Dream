@@ -9,7 +9,7 @@ const ake = arr.pop();
 console.log(arr);
 arr.unshift(ake);
 console.log(arr);
-// 先进后出
+// 先进后出 
 arr.unshift('苏荃');
 console.log(arr);
 const sq = arr.shift();
