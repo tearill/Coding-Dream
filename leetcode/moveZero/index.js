@@ -11,7 +11,7 @@ for (let i = 0; i < nums.length; i++) {
     }
 } 
 return notZeroArr.concat(zeroArr);
-}
+} 
 console.log(moveZero([0,1,0,3,12]));
 // console.log('fdfdf')
 
