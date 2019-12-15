@@ -3,7 +3,7 @@ const fs = require('fs');
 const AipImageClassifyClient = require("baidu-aip-sdk").imageClassify;
 
 // console.log('hello node');
-//同步读取
+//同步读取 
 const image = fs.readFileSync("car.jpg").toString("base64");
 // console.log(image);
 const client = new AipImageClassifyClient('17711744', 'IBGosTNTPj9uHGnqsyErUcze', 'G2Wy39OT0pZy604K54fuFXiOXiQfWNZc');
