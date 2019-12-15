@@ -34,5 +34,5 @@
     JSON 对象字面量 {} 可以被key:value 的对象
 
 - typeof null 类型是'object'?
-- 怎么样区别 [] {} typeof的输出 ?
+- 怎么样区别 [] {} typeof的输出 ? 
   
