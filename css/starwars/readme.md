@@ -8,7 +8,7 @@
     选择器 CSS Selector 
     > 父子选择器
     + 兄弟
-
+ 
 - 前端是代码界的导演
   后端是制作人
   transform: tranlate(-50%, -50%);
