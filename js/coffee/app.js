@@ -13,7 +13,7 @@ Beverage.prototype.pourInCup = function() {}
 Beverage.prototype.addCondiments = function() {}
 Beverage.prototype.make = function() {
     this.boilWater();
-    this.brew();
+    this.brew(); 
     this.pourInCup();
     this.addCondiments();
 }
