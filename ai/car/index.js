@@ -1,7 +1,7 @@
 // fileSystem 内置模块
 const fs = require('fs');
 const AipImageClassifyClient = require("baidu-aip-sdk").imageClassify;
-
+ 
 // console.log('hello node');
 //同步读取 
 const image = fs.readFileSync("car.jpg").toString("base64");
