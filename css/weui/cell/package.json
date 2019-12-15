@@ -7,7 +7,7 @@
     "dev": "live-server",
     "styl": "stylus -w cell.styl -o cell.css"
   },
-  "keywords": [],
+  "keywords": [], 
   "author": "",
   "license": "ISC"
 }

@@ -13,4 +13,4 @@ __ 子元素 BEM Block Element Modifier
 - 研究微信官方前端框架weui源码
 - BEM 挺好的，类名取名的依据
 - .hb+.bd+.ft  少跟业务相关，多一些抽象 
-- 弹性布局 align-items:center; 垂直居中 flex:1; 占据主体内容
+- 弹性布局 align-items:center; 垂直居中 flex:1; 占据主体内容 

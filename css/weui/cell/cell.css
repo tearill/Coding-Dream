@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   align-items: center;
-}
+} 
 .weui-cell::after,
 .weui-cell::before {
   content: "";
