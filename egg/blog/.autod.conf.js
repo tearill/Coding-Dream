@@ -6,7 +6,7 @@ module.exports = {
   plugin: 'autod-egg',
   test: [
     'test',
-    'benchmark',
+    'benchmark', 
   ],
   dep: [
     'egg',
