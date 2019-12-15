@@ -9,4 +9,4 @@ const config = {
         HOST: '192.168.31.128'
     }
 };
-module.exports = config;
+module.exports = config; 

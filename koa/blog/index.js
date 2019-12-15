@@ -15,7 +15,7 @@ app.use(
             extension: 'ejs'
         }
 ));
-app.use(postRouter.routes());
+app.use(postRouter.routes()); 
 app.use(signinRouter.routes());
 console.log(`listening on port ${config.port}`);
 app.listen(config.port);
