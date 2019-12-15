@@ -12,5 +12,5 @@ function maxSubArray(nums) {
         // 不管最大子和是多少，他都是一次for循环
     }
     return max;
-}
+} 
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
