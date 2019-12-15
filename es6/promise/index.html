@@ -28,7 +28,7 @@
         // 1. json()  文件流数组 => json()数组 map
         // 2. promise 数组 then
         return Promise.all(responses.map(res => res.json()))
-    })
+    }) 
     .then(responses => {
         console.log(responses)
     })
