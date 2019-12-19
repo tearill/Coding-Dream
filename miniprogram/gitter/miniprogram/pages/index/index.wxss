@@ -1,0 +1,12 @@
+/**index.wxss**/
+.trends {
+  /* 留空间给搜索 */
+  padding-top: 100rpx;
+}
+.lang-picker {
+  position: fixed;
+  bottom: 228rpx;
+  right: 48rpx;
+  height: 48rpx;
+  
+}
