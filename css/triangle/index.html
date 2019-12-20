@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角形</title>
+    <style>
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent; /* 边框交界处 */
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid yellowgreen;
+    }
+    .triangle:hover {
+        border-bottom: 0;
+        border-left: 50px solid transparent; 
+        border-right: 50px solid transparent;
+        border-top: 100px solid yellowgreen; 
+    }
+    .trapezoid {
+        position: relative;
+        width: 60px;
+        height: 60px;
+    }
+    .trapezoid::before {
+        margin-top: 10px;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transform: perspective(20px) scaleY(1.3) rotateX(10deg); /*顺时针旋转5像素*/
+        transform-origin: bottom;
+        background-color: yellowgreen;
+    }
+    .triangles {
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        border-top: 100px solid blue;
+        border-left: 100px solid yellow;
+        border-right: 100px solid red;
+        border-bottom: 100px solid green;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="triangle">
+
+    </div>
+    <div class="trapezoid">
+
+    </div>
+    <div class="triangles">
+
+    </div>
+</body>
+</html>
