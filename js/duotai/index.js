@@ -14,7 +14,7 @@ Person.prototype.toString = function() {
 // console.log(Object.prototype.toString.call(arr)); // { }
 // [object Array]
 
-function Man(name, age) {
+function Man(name, age) { 
     // Person 构造函数 把父类的构造函数执行一下
     console.log(arguments, '--------');
     Person.apply(this, arguments);

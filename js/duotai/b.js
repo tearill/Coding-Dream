@@ -7,7 +7,7 @@ var makeSound = function(animal) {
     // }
     animal.say(); // 面向对象的优化
 }
-var Duck = function() {};
+var Duck = function() {}; 
 Duck.prototype.say = function() {
     console.log('嘎嘎嘎');
 }
