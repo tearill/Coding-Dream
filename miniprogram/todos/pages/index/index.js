@@ -53,5 +53,10 @@ Page({
     this.setData({
       addText: e.detail.value
     })
+  },
+  addTodoHide() {
+    this.setData({
+      addShow: false
+    })
   }
 })
