@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <v-header :seller="seller"></v-header>
     <div class="tab border-1px">
       <div class="tab-item">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <router-view />
-    <v-footer /> 
+    <!--<v-footer /> -->
   </div>
 </template>
 
@@ -54,6 +54,7 @@ export default {
 *
   margin 0
   padding 0
+
 .tab
   display flex
   width 100%
