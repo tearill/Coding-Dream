@@ -20,7 +20,7 @@ function Man(name, age) {
     Person.apply(this, arguments);
 }
 Man.prototype = Object.create(Person.prototype);
-// 覆盖Person的toStrin方法
+// 覆盖Person的toString方法
 Man.prototype.toString = function() {
     return 'I am a 007, my name is ' + this.name;
 }
