@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Rectangles</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="myCanvas">
+        
+    </canvas>
+
+    <script>
+        const canvas = document.querySelector('.myCanvas');
+        const width = canvas.width = window.innerWidth;
+        const height = canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d'); // 获取2d画布对象
+
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.fillStyle = 'rgb(255, 0, 0)';
+        ctx.fillRect(50, 50, 100, 150); // 左边和顶边与画布边缘距离均为 50 px，宽 100 px、高 150 px
+
+        ctx.fillStyle = 'rgb(0, 255, 0)';
+        ctx.fillRect(75, 75, 100, 100);
+
+        ctx.fillStyle = 'rgba(255, 0, 255, 0.75)'; // 设置透明度
+        ctx.fillRect(25, 100, 175, 50);
+
+        ctx.strokeStyle = 'rgb(255, 255, 255)'; // 设置框线颜色
+        ctx.lineWidth = 5; // 设置框线像素
+        ctx.strokeRect(25, 25, 175, 200);
+
+    </script>
+</body>
+</html>
