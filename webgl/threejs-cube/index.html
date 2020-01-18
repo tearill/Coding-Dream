@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Threejs Cube</title>
+    <script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <script src="./main.js"></script> -->
+    <script>
+        const scene = new THREE.Scene(); // 构建一个新的场景 表示即将显示的整个3D世界
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // 创建一个相机
+        
+        camera.position.z = 5; // 相机的远近
+
+        const renderer = new THREE.WebGLRenderer(); // 渲染器
+        renderer.setSize(window.innerWidth, window.innerHeight); // 渲染器在当前相机视角下的尺寸
+        document.body.appendChild(renderer.domElement); // 将渲染好的canvas对象加入body中
+
+        let cube; // 魔方对象
+
+        let loader = new THREE.TextureLoader(); //加入纹理对象
+
+        loader.load('metal003.png', function (texture) { // 载入纹理图
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set(2, 2); // 指明要在魔方的每个面渲染 2X2 的图片
+
+            let geometry = new THREE.BoxGeometry(2.4, 2.4, 2.4); // 形状 立方体
+            let material = new THREE.MeshLambertMaterial({ // 材质
+                map: texture, 
+                shading: THREE.FlatShading 
+            });
+            cube = new THREE.Mesh(geometry, material); // 建模 (一个几何形状，一个素材)
+            scene.add(cube);
+
+            draw(); // 调用draw函数开始动画
+        });
+        
+        // 为场景打光，照亮场景中的物体
+        let light = new THREE.AmbientLight('rgb(255,255,255)'); // 柔光
+        scene.add(light);
+
+        let spotLight = new THREE.SpotLight('rgb(255,255,255)'); // 直射的硬光
+        spotLight.position.set(100, 1000, 1000);
+        spotLight.castShadow = true;
+        scene.add(spotLight);
+
+        function draw() {
+            cube.rotation.x += 0.01; // 沿 X 轴将魔方轻微转动
+            cube.rotation.y += 0.01; // 沿 Y 轴将魔方轻微转动
+            renderer.render(scene, camera); //渲染场景
+
+            requestAnimationFrame(draw); // 准备下一帧
+        }
+    </script>
+</body>
+
+</html>
