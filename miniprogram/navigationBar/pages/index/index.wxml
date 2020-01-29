@@ -1,0 +1,3 @@
+<!-- index.wxml -->
+<navigationBar navbar-data='{{nvabarData}}'></navigationBar>
+<view class='home-page' style='margin-top: {{height}}px'>home page</view>
