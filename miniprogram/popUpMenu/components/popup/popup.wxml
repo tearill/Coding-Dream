@@ -1,0 +1,23 @@
+<!-- components/component.wxml -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!-- 弹出框 -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <!-- 图片 -->
+    <image class="avatar" src="{{popupData.src}}"></image>
+    <!-- 价格 -->
+    <view class="price">
+        <view class="price">
+            ¥
+            <text class="big_Red">{{popupData.price_before_dot}}.</text>
+            {{popupData.price_after_dot}}
+        </view>
+    </view>
+    <view class="options">
+        <view class="type">版本</view>
+        <view class="type_option">
+            <view class="option {{currentOption === 0?'seleted':''}}" bindtap="select" data-id="0">版本一</view>
+            <view class="option {{currentOption === 1?'seleted':''}}" bindtap="select" data-id="1">版本二</view>
+            <view class="option {{currentOption === 2?'seleted':''}}" bindtap="select" data-id="2">版本三</view>
+        </view>
+    </view>
+</view>

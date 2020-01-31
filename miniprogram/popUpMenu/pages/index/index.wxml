@@ -1,0 +1,3 @@
+<!--index.wxml-->
+<view bindtap="clickme" bindtap="show">点击我可以看到底部弹框的出现</view>  
+<popup id="popup"></popup>
