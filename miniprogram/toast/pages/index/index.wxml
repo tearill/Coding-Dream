@@ -1,0 +1,14 @@
+<!-- index.wxml -->
+<!-- 距离顶部高度由业务需要动态确定 -->
+<!-- <view class='mask' hidden="{{flase}}" style='top: {{top}}'>
+  <image class="image" src='../../images/success.png' mode='aspectFit'></image>
+  <view class="info">
+    <view class='info1'>领取成功</view>
+    <view class="info2">5~10分钟到账</view>
+  </view>
+</view> -->
+<view class="text">测试背后的文字是否会被遮挡</view>
+
+<button class="show" bindtap="show">显示toast</button>
+
+<toast id="toast" toast-data="{{toastData}}"></toast>
