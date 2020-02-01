@@ -72,7 +72,9 @@
        Child5.prototype = Object.create(Parent5.prototype);
        Child5.prototype.constructor = Child5;
        console.log(new Child5());
-       - Object.create是一种创建对象的方式，它会创建一个中间对象
+       ```
+       - Object.create是一种创建对象的方式，它会创建一个中间对象  
+       ```
        var p = {name: "p"}
        var obj = Object.create(p)
        // Object.create({ name: "p" })
