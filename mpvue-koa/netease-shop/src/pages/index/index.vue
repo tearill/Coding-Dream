@@ -81,7 +81,7 @@ export default {
       });
     },
     async getData() {
-      const data = await get('/index/index') // http://localhost:5757/lm
+      const data = await get('/index/index') // http://localhost:5757/lm/index/index
       console.log(data)
     }
   }
