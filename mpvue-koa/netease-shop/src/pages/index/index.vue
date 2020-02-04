@@ -8,14 +8,82 @@
         <span class="icon"></span>
       </div>
     </div>
+    <!-- 轮播图 -->
     <div class="swiper">
-      <swiper class="swiper-container" indicator-dots="true" auto-play="true" interval="3000" circular="true" duration="500">
-        <block v-for="(item, index) in banner" :key="index">
+      <swiper class="swiper-container" indicator-dots="true" autoplay="true" interval="3000" circular="true" duration="500">
+        <block v-for="(item, index) in banner" :key="index" @click="categoryList(item.id)">
           <swiper-item class="swiper-item">
             <image class="slide-image" :src="item.image_url" />
           </swiper-item>
         </block>
       </swiper>
+    </div>
+    <!-- 选项 -->
+    <div class="channel">
+      <div v-for="(item, index) in channel" :key="index">
+        <img :src="item.icon_url" alt="">
+        <p>{{item.name}}</p>
+      </div>
+    </div>
+    <!-- 品牌 -->
+    <div class="brand">
+      <div class="head" @click="tobrandList">
+        品牌制造商直供
+      </div>
+      <div class="content">
+        <div v-for="(item, index) in brandList" :key="index" @click="brandDetail(item.id)">
+          <div>
+            <p>{{item.name}}</p>
+            <p>{{item.floor_price}}元起</p>
+          </div>
+          <img :src="item.new_pic_url" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- 新品首发 -->
+    <div class="newgoods">
+      <div class="newgoods-top" @click="goodsList('new')">
+        <div class="top">
+          <p>新品首发</p>
+          <p>查看全部</p>
+        </div>
+      </div>
+      <div class="list">
+        <ul>
+          <scroll-view class="scroll-view" :scroll-x="true">
+            <li v-for="(item, index) in newGoods" :key="index">
+              <img :src="item.list_pic_url" alt="">
+              <p>{{item.name}}</p>
+              <p>{{item.goods_brief}}</p>
+              <p>¥{{item.retail_price}}</p>
+            </li>
+          </scroll-view>
+        </ul>
+      </div>
+    </div>
+    <!-- 人气推荐 -->
+    <div class="newgoods hotgoods">
+      <div class="newgoods-top" @click="goodsList('hot')">
+        <div class="top">
+          <p>人气推荐
+            <span></span>
+            好物精选
+          </p>
+          <p>查看全部</p>
+        </div>
+      </div>
+      <div class="list">
+        <ul>
+          <scroll-view class="scroll-view" :scroll-x="true">
+            <li v-for="(item, index) in hotGoods" :key="index">
+              <img :src="item.list_pic_url" alt="">
+              <p>{{item.name}}</p>
+              <p>{{item.goods_brief}}</p>
+              <p>¥{{item.retail_price}}</p>
+            </li>
+          </scroll-view>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -27,11 +95,19 @@ import { get } from "../../utils"
 export default {
   data() {
     return {
-      banner: []
+      banner: [],
+      channel: [],
+      brandList: [],
+      newGoods: [],
+      hotGoods: []
     };
   },
   computed: {
     ...mapState(["cityName"])
+  },
+  mounted () {
+    this.getData()
+    this.getCityName()
   },
   methods: {
     ...mapMutations(["update"]),
@@ -80,9 +156,40 @@ export default {
         }
       });
     },
-    async getData() {
+    async getData() { // 请求数据
       const data = await get('/index/index') // http://localhost:5757/lm/index/index
       console.log(data)
+      this.banner = data.banner
+      this.channel = data.channel
+      this.brandList = data.brandList
+      this.newGoods = data.newGoods
+      this.hotGoods = data.hotGoods
+    },
+    categoryList(id) {
+      wx.navigateTo({ 
+        url: '/pages/categoryList/main?id=' + id
+      });
+    },
+    brandDetail(id) {
+      wx.navigateTo({
+         url: './pages/brandDetail/main?id=' + id 
+      });
+    },
+    tobrandList() {
+      wx.navigateTo({
+         url: '/pages/brandList/main' 
+      });
+    },
+    goodsList(info) {
+      if(info == 'hot') {
+        wx.navigateTo({
+          url: '/pages/newgoods/main?isHot=' + 1 
+        });
+      }else {
+        wx.navigateTo({
+          url: '/pages/newgoods/main?isNew=' + 1 
+        });
+      }
     }
   }
 };
