@@ -1,0 +1,32 @@
+body {
+    background: #fff;
+}
+
+#div1 {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 20px auto 0;
+}
+
+#div1 a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Microsoft YaHei;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 3px 6px;
+}
+
+#div1 a:hover {
+    border: 1px solid #0165FF;
+    color: #0165FF;
+}
+
+p {
+    font: 16px Microsoft YaHei;
+    text-align: center;
+    color: #ba0c0c;
+}
