@@ -85,6 +85,48 @@
         </ul>
       </div>
     </div>
+    <!-- 专题精选  -->
+    <div class="topicList">
+      <div class="topicList-top">
+        专题精选
+        <span class="icon"></span>
+      </div>
+      <div class="list">
+        <ul>
+          <scroll-view class="scroll-view" :scroll-x="true">
+            <li v-for="(item, index) in topicList" :key="index" @click="topicDetail(item.id)">
+              <img :src="item.item_pic_url" alt="">
+              <div class="btom">
+                <div>
+                  <p>{{item.title}}</p>
+                  <p>{{item.subtitle}}</p>
+                </div>
+                <div>{{item.price_info}}元起</div>
+              </div>
+            </li>
+          </scroll-view>
+        </ul>
+      </div>
+    </div>
+    <!-- 居家好物等好物 -->
+    <div class="newcategory">
+      <div class="list" v-for="(item, index) in newCategoryList" :key="index">
+        <div class="head">{{item.name}}好物</div>
+        <div class="sublist">
+          <div v-for="(subitem, subindex) in item.goodsList" :key="subindex">
+            <img :src="subitem.list_pic_url" alt="">
+            <p>{{subitem.name}}</p>
+            <p>{{subitem.retail_price}}</p>
+          </div>
+          <div>
+            <div class="last">
+              <p>{{item.name}}好物</p>
+              <span class="icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -99,7 +141,9 @@ export default {
       channel: [],
       brandList: [],
       newGoods: [],
-      hotGoods: []
+      hotGoods: [],
+      topicList: [],
+      newCategoryList: []
     };
   },
   computed: {
@@ -164,6 +208,8 @@ export default {
       this.brandList = data.brandList
       this.newGoods = data.newGoods
       this.hotGoods = data.hotGoods
+      this.topicList = data.topicList
+      this.newCategoryList = data.newCategoryList
     },
     categoryList(id) {
       wx.navigateTo({ 
@@ -190,6 +236,11 @@ export default {
           url: '/pages/newgoods/main?isNew=' + 1 
         });
       }
+    },
+    topicDetail(id) {
+      wx.navigateTo({ 
+        url: '/pages/topicDetail/main?id=' + id 
+      });
     }
   }
 };
