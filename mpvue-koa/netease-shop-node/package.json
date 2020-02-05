@@ -1,11 +1,12 @@
 {
   "name": "netease-shop-node",
   "version": "1.0.0",
-  "description": "mpvue + koa2 高仿网易严选小程序 --- node后台",
-  "main": "index.js",
+  "description": "- mpvue + koa2 高仿网易严选小程序\r - node后台",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
