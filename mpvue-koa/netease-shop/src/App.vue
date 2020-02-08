@@ -1,6 +1,6 @@
 <script>
 export default {
-  created () {
+  created() {
     // 调用API从本地缓存中获取数据
     /*
      * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
@@ -9,25 +9,39 @@ export default {
      * 百度：mpvue === swan, mpvuePlatform === 'swan'
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
+    var userInfo = {
+      openId: "oQmbb4sNZdxaUQZ0sfYgvtOP2S7c",
+      nickName: "Horace",
+      gender: 1,
+      language: "zh_CN",
+      city: "Ganzhou",
+      province: "Jiangxi",
+      country: "China",
+      avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/QNxwK0GqTw5Zf4m4DR8PUdfXoCOurEMJ5ic4uHcXI106SqDfnAlJzcQ9Nc7T4SVsqGMhc20ATPQgqiciczySiaVkPg/132",
+      watermark: { timestamp: 1535513485, appid: "wx601ce71bde7b9add" }
+    };
+    var openId = userInfo.openId;
+    wx.setStorageSync("userInfo", userInfo);
+    wx.setStorageSync("openId", openId);
 
-    let logs
-    if (mpvuePlatform === 'my') {
-      logs = mpvue.getStorageSync({key: 'logs'}).data || []
-      logs.unshift(Date.now())
+    let logs;
+    if (mpvuePlatform === "my") {
+      logs = mpvue.getStorageSync({ key: "logs" }).data || [];
+      logs.unshift(Date.now());
       mpvue.setStorageSync({
-        key: 'logs',
+        key: "logs",
         data: logs
-      })
+      });
     } else {
-      logs = mpvue.getStorageSync('logs') || []
-      logs.unshift(Date.now())
-      mpvue.setStorageSync('logs', logs)
+      logs = mpvue.getStorageSync("logs") || [];
+      logs.unshift(Date.now());
+      mpvue.setStorageSync("logs", logs);
     }
   },
-  log () {
-    console.log(`log at:${Date.now()}`)
+  log() {
+    console.log(`log at:${Date.now()}`);
   }
-}
+};
 </script>
 
 <style>
@@ -54,7 +68,8 @@ button {
 button::after {
   border: 0;
 }
-view, text {
+view,
+text {
   font-size: 28rpx;
   color: #333333;
 }

@@ -8,20 +8,25 @@
           </div>
           <div @click="cancel">取消</div>
       </div>
+      <!-- 搜索提示 -->
       <div class="searchtips" v-if="words">
-          <div>
-              牙刷
+          <div v-if="tipsData.length!=0">
+              <div v-for="(item, index) in tipsData" :key="index">
+                  {{item.name}}
+              </div>
           </div>
-          <div class="nogoods">数据库暂无此类商品</div>
+          <div class="nogoods" v-else>数据库暂无此类商品...</div>
       </div>
       <!-- 历史记录 -->
-      <div class="history">
+      <div class="history" v-if="historyData.length!==0">
           <div class="t">
             <div>历史记录</div>
             <div @click="clearHistory"></div>
           </div>
           <div class="content">
-              <div>日式</div>
+              <div v-for="(item, index) in historyData" :key="index" @click="searchWords" :data-value="item.keyword">
+                  {{item.keyword}}
+              </div>
           </div>
       </div>
       <!-- 热门搜索 -->
@@ -30,13 +35,11 @@
             <div>热门搜索</div>
           </div>
           <div class="content">
-              <div class="active">日式</div>
-              <div>123</div>
-              <div>456</div>
-              <div>日式789</div>
+              <div v-for="(item, index) in hotData" :key="index" :class="{active: item.is_hot === 1}" @click="searchWords" :data-value="item.keyword">
+                  {{item.keyword}}
+              </div>
           </div>
       </div>
-      
   </div>
 </template>
 
@@ -48,27 +51,42 @@ export default {
             words: '',
             openid: '',
             hotData: [],
-            historyData: []
+            historyData: [],
+            tipsData: []
         }
     },
     mounted() {
-        this.openid = wx.getStorageSync('openid') || '';
-        this.getHotData()
+        this.openid = wx.getStorageSync('openId') || '';
+        this.getHotData();
     },
     methods: {
         clearInput() {
             this.words = '';
         },
         cancel() {},
-        clearHistory() {},
+        async clearHistory() { // 清除搜索历史
+            const data = await post('/search/clearhistoryAction', {
+                openId: this.openid
+            })  
+            // console.log(data);   
+            if (data) { // 删除成功
+                this.historyData = []
+            }
+        },
         inputFocus() {},
-        tipSearch() {},
-        async searchWords(e) {
+        async tipSearch() { // 取input框中值做接口请求搜索
+            const data = await get('/search/helperaction', {
+                keyword: this.words
+            })
+            // console.log(data)
+            this.tipsData = data.keywords
+        },
+        async searchWords(e) { // 添加搜索记录
             console.log(e.target.value);
-            let value = e.target.value;
+            let value = e.currentTarget.dataset.value; // 热门搜索点击的时候的值
             this.words = value || this.words;
             const data = await post('/search/addhistoryaction', { // 传给后端api进行搜索请求的数据
-                openId: this.words,
+                openId: this.openid,
                 keyword: value || this.words
             });
             // console.log(data);
@@ -78,8 +96,8 @@ export default {
         async getHotData(first) { // 取出历史搜索记录和热门数据
             const data = await get('/search/indexaction?openId=' + this.openid);
             this.historyData = data.historyData;
-            this.hotData = data.hotData;
-            console.log(data)
+            this.hotData = data.hotKeywordList;
+            // console.log(data);
         }
     }
 };
