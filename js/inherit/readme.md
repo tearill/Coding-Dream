@@ -58,7 +58,9 @@
        console.log(s1 instanceof Child4); // true
        console.log(s1.constructor.name); // Parent4
        ```
-       - 缺点：instanceOf无法区分对象是由Child4还是Parent4实例化的，s1的构造函数是父类Parent4而不是Child4  
+       - 缺点：
+         1. instanceOf无法区分对象是由Child4还是Parent4实例化的，s1的构造函数是父类Parent4而不是Child4  
+         2. Child4.prototype = Parent4.prototype; 这句代码只是让Child4.prototype直接引用Parent4.prototype对象。因此在执行类似`Child4.prototype.key = value;`的赋值语句时会直接修改Parent4.prototype对象本身
     5. 组合式继承优化2(继承最完美的方式)  
        ```
        function Parent5() {
