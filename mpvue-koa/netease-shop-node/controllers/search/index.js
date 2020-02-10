@@ -78,7 +78,7 @@ async function helperAction(ctx) {
     const { keyword } = ctx.query // 拿到get请求参数
     // console.log(keyword)
     var order = ctx.query.order // 排序依据
-    if (!order) {
+    if (!order) { // 如果没传排序依据
         order = ''
         orderBy = 'id'
     } else {
@@ -86,7 +86,7 @@ async function helperAction(ctx) {
     }
     const keywords = await mysql('nideshop_goods').orderBy(orderBy, order)
         .column('id', 'name', 'list_pic_url', 'retail_price')
-        .where('name', 'like', '%' + keyword + '%').limit(10).select()
+        .where('name', 'like', '%' + keyword + '%').limit(10).select() // 搜索输入之后提示出来的词语
         if (keywords) { // 是否有相关的数据
             ctx.body = {
                 keywords
