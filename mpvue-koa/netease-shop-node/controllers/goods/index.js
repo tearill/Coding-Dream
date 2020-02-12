@@ -13,7 +13,7 @@ async function detailAction(ctx) {
         'goods_id': goodsId
     }).select();
     ctx.body = {
-        'info': info,
+        'info': info[0] || [],
         'gallery': gallery
     }
 }
