@@ -31,7 +31,7 @@
   2. transform: scale(12) 12 -> 0  --- 动态改变 从放大 12 倍变回原样    
      transition transform .6s, opacity .6s  --- 过渡效果 花0.6秒进行放大和透明度的变化
 
-  3. 
+  3. pointer-events: none;
 
 - 一堆的按钮  
   为开发准备好基础组件，小程序中用过组件  
