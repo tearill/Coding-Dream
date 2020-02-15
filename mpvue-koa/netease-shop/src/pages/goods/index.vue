@@ -141,7 +141,7 @@ export default {
             issueList: [], // 常见问题
             productList: [], // 大家都在看
             collectFlag: false, // 是否收藏
-            goods_id: '',
+            goodsId: '',
             allnumber: 0, // 购物车商品数量
             allPrice: ''
         }
@@ -159,12 +159,14 @@ export default {
     },
     mounted() {
         this.openId = wx.getStorageSync('openId') || '';
+        this.id = this.$root.$mp.query.id;
+        console.log(this.id);
         this.goodsDetail()
     },
     methods: {
         async goodsDetail() { // 详情的数据请求
             const data = await get('/goods/detailaction', {
-                id: 1009024,
+                id: this.id,
                 openId: this.openId
             })
             console.log(data);
@@ -174,7 +176,7 @@ export default {
             this.goods_desc = data.info.goods_desc;
             this.issueList = data.issue;
             this.productList = data.productList;
-            this.goods_id = data.info.id;
+            this.goodsId = data.info.id;
             this.collectFlag = data.collected;
             this.allnumber = data.allnumber;
             this.allPrice = data.info.retail_price;
@@ -218,7 +220,7 @@ export default {
                     return false;
                 }
                 const data = await post('/order/submitAction', {
-                    goods_id: this.goods_id,
+                    goodsId: this.goodsId,
                     openId: this.openId,
                     allPrice: this.allPrice
                 })
@@ -231,9 +233,32 @@ export default {
                 this.showpop = true;
             }
         },
-        addCart() {
+        async addCart() {
             if (this.showpop) {
-                
+                if (this.number === 0) {
+                    wx.showToast({
+                        title: '请选择商品数量',
+                        duration: 2000,
+                        icon: 'none',
+                        mask: true,
+                        success: res => {}
+                    })
+                    return false;
+                }
+                const data = await post('/cart/addCart', {
+                    openId: this.openId,
+                    goodsId: this.goodsId,
+                    number: this.number
+                })
+                if (data) {
+                    this.allnumber = this.allnumber + this.number;
+                    wx.showToast({
+                      title: '添加购物车成功', //提示的内容,
+                      icon: 'success', //图标,
+                      duration: 1500, //延迟时间,
+                      mask: true //显示透明蒙层，防止触摸穿透
+                    });
+                }
             } else {
                 this.showpop = true;
             }
