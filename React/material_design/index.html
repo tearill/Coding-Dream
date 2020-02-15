@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goole Material Design & Flutter</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 带有波浪感觉 交互性感觉 android -->
+        <!-- 从手指按下去的地方，晕开的感觉 -->
+        <!-- <div class="xButton ripple">按钮</div>
+        <div class="xButton ripple primary">按钮</div>
+        <div class="xButton ripple circle">按钮</div>
+        <div class="xButton ripple warning">按钮</div> -->
+
+    </div>
+    <script type="text/babel">
+        // 封一个组件
+        // 页面上有一个 root 元素，写的不是具体的代码，写的是为了未来要用的组件，写抽象公用的组件代码
+        // 类似于 document.body.appendChild()
+        // React 中一个返回 html 的函数就是组件
+        function Button(props) {
+            // props 参数管家
+            console.log(props); // 组件里面的东西
+            let { children, type, shape, onClick, block } = props
+            return (
+                <div
+                onClick={onClick}
+                className={`xButton ripple ${type?type:''} ${shape?shape:''} ${block?'block':''}`}>
+                    {children}
+                </div>
+            )
+        }
+        // ReactDOM --- 渲染组件API
+        ReactDOM.render(
+            // 不写基本的 html，而用封装过后的组件
+            <div>
+                <Button>default</Button>
+                <Button type="primary">primary</Button>
+                <Button type="warning">warn</Button>
+                <Button type="primary" block>primary&block</Button>
+                <Button type="warning" shape="circle">circle</Button>
+                <Button onClick={() => { alert('hiha') }}>hiha</Button>
+            </div>,// Button 组件在 html 里面没有
+            // 一个把 css 类名变量，js 点击交互组装到一起的组件 名字叫做 Button   
+            document.getElementById('root')) // 根结点
+    </script>
+</body>
+
+</html>

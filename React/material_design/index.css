@@ -1,0 +1,49 @@
+.xButton {
+  margin: 5px;
+  box-sizing: border-box /* mobile border以内的设置都是宽高 传统的只是内容的 */;
+  display: inline-block;
+  padding: 6px 1em;
+  border-radius: 4px;
+  color: #fff;
+  font-family: inherit;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  user-select: none /* 文字不能被选中 */;
+}
+.xButton.primary {
+  background-color: #09f;
+}
+.xButton.circle {
+  border-radius: 1.5em;
+}
+.xButton.warning {
+  background-color: #f90;
+}
+.xButton.block {
+  display: block;
+}
+.ripple {
+  position: relative;
+}
+.ripple::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: block;
+  background-image: radial-gradient(circle, #fff 10%, transparent 11%) /* 画一个圆形背景 白色 周围一圈透明 */;
+  background-position: 50% /* 背景居中 */;
+  background-repeat: no-repeat;
+  transform: scale(12) /* 放大12倍 初始铺满整个按钮 */;
+  transition: transform 0.6s, opacity 0.6s /* 过渡效果 花0.6秒进行变大和透明度变化 */;
+  opacity: 0;
+}
+.ripple:active::after {
+  opacity: 0.3 /* 透明度 */;
+  transform: scale(0) /* 缩回原位 */;
+  transition: 0s;
+}
