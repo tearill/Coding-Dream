@@ -1,0 +1,6 @@
+<!-- index.wxml -->
+<view class="upload-photo" bindtap="uploadImg">上传图片</view>
+<view class="photo" wx:for="{{imgs}}" wx:for-index="index">
+  <image src="{{item}}" mode="widthFix"></image>
+</view>
+<view class="upload-file" bindtap="uploadFile">上传文件</view>
