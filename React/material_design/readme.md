@@ -1,4 +1,5 @@
 # material design 来自 google 的UI风格  
+
 - 特别的地方  
   从 css 风格 -> 组件化 -> react 入门  
 
@@ -6,7 +7,7 @@
   使用 css  
   - material design 的灵魂，在于对交互的创新  
     波浪感，进度条的进度感  
-    移动端细节: 
+    移动端细节:  
         cursor: pointer 用的是非 button 组件
         user-select: none;
         stylus 嵌入式 ::after  :active::after
@@ -21,14 +22,14 @@
 
      #fff 10% 表示距离原点半径 10% 这段距离都是 #fff  
 
-     transparent 11% 表示距离原点 10% 到 11% 都是 transparent --- 10% 白 1%的透明(带来了周围一圈光晕)    
+     transparent 11% 表示距离原点 10% 到 11% 都是 transparent --- 10% 白 1%的透明(带来了周围一圈光晕)  
 
      由于没有设置其他颜色，所以距离原点11px以后都是transparent颜色
-    
-     参数(用法):   
+
+     参数(用法):  
      background: radial-gradient(shape, size, position, start-color, ..., last-color);
 
-  2. transform: scale(12) 12 -> 0  --- 动态改变 从放大 12 倍变回原样    
+  2. transform: scale(12) 12 -> 0  --- 动态改变 从放大 12 倍变回原样  
      transition transform .6s, opacity .6s  --- 过渡效果 花0.6秒进行放大和透明度的变化
 
   3. pointer-events: none;
@@ -46,16 +47,21 @@
 - ReactDOM --- React 和 DOM 交互的库  
   基本语法：  
   定义了一个 Button 组件：type 文字 block 等有通用性的需求  
-  1. ReactDOM.render(, document.getElementById('')) --- 在某个结点下插入组件  
+  需要在babel编译的环境下执行  
+  `<script type="text/babel"></script>`
+  1. ReactDOM.render(组件, document.getElementById('')) --- 在某个结点下插入组件 --- 把组件渲染到节点上  
      JSX 语法  
      才可以在 root 里面显示组件，组件要编译  
-  2. 
-    ```js 
+  2. 定义相应的组件  
+
+    ```js
         function Button(props) { // 定义组件
             return (
                 <div></div>
             )
-        } 
-    ```
+        }
+    ```  
+
     props --- 插入的参数
   3. 只要写一次，以后所有的按钮都可以用它
+  
