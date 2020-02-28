@@ -1,4 +1,4 @@
-# elm  
+# elm 31K 人气项目 
 - github Vue开源项目学习 👉 https://github.com/bailicangdu/vue2-elm/tree/64ab85906d1177cb23893a6b62cbf774ceb5a68a
 
 - rem  
@@ -35,4 +35,7 @@
      mixin.styl --- css 模块化，功能化封装  
   2. 满足各种需求的组件  
      使用 slot 让组件复用性更好，适合各种场景，更灵活  
-  
+
+- 通用组件开发  
+  1. UI 组件，通用组件  
+  2. css 避开了 iconfont 自定义字体、图片这些，用技术手法高效解决了 --- svg、css  
