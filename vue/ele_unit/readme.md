@@ -13,14 +13,18 @@ element
   + form-fade-enter-active 在进入的过程之中，也就是 transition 的时间
   + form-fade-enter -> .form-fade-enter-active(1s)  
   + 出场 true -> false  
-    form-fade-leave 离开的状态 存在一帧  
+    form-fade-leave-to 离开的状态 存在一帧  
   + form-fade-leave-active 离开   
   
   总结：  
-  transition-name-enter(只存在一帧的时间) -> transition-name-enter-active 子元素原来的样式  
-  transition-name-enter 未进入的时候的样式  
-  transition-name-enter-active 设置 transition 时间  
-  退场 transtion-name-leave-active  
+  v-enter(只存在一帧的时间) -> transition-name-enter-active 子元素原来的样式  
+  v-enter 未进入的时候的样式  
+  v-enter-active 设置 transition 时间  
+  退场 v-leave-active  
+  v-enter：进入过渡的开始状态，元素被插入时生效，只应用一帧后立即删除；  
+  v-enter-active：进入过渡的结束状态，元素被插入时就生效，在过渡过程完成之后移除；  
+  v-leave：离开过渡的开始状态，元素被删除时触发，只应用一帧后立即删除；  
+  v-leave-active：离开过渡的结束状态，元素被删除时生效，离开过渡完成之后被删除；  
 
 - Vue 中的跨域处理 --- 使用 proxy 代理  
   vue.config.js 配置 devServer 设置代理  
