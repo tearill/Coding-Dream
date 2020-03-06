@@ -100,3 +100,10 @@ db.orders.find({orderDate:{$gte:ISODate("2019-01-01"), $lt: ISODate("2019-01-03"
   aggregate 集合查询，上一个查询条件的结果，是下一个查询的输入  
   $match 相当于 where  
   $group 相当于 group by  
+
+- todo 活动 activity  
+  开始日期 结束日期  
+  1. Schema 设计  todoSchema 
+  2. config 中进行连接数据库  
+  3. router 中操作数据库 导出的 Todo 类自动映射 mongoodb 中的 todos 集合  
+  4. app.js 启用服务 -> 路由中间件 '/todo'  
