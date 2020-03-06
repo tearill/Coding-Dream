@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import axios from 'axios' // Vue 的请求库
+import axios from 'axios' // Vue 常用的的请求库
 import _ from 'lodash' // Vue 开发中最常用的工具库
 export default {
   name: 'App',
