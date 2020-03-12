@@ -1,7 +1,14 @@
 <template>
   <div id="app">
+    <select @change="queryTag">
+      <option value="">请选择</option>
+      <option value="coding">编程</option>
+      <option value="music">音乐</option>
+      <option value="blogs">博客</option>
+    </select>
     <div v-for="(user, index) in users" :key="index">
-      {{ user.id }} || {{ user.name }}
+      <!-- {{ user.id }} ||  -->
+      {{ user.name }}
     </div>
   </div>
 </template>
@@ -28,8 +35,14 @@ export default {
     ...mapGetters(['users'])
   },
   methods: {
-    ...mapActions(['fetchUsers']),
+    ...mapActions(['fetchUsers', 'queryTag']),
     // ...mapMutations(['setUsers'])
+    // queryTag() { // 根据 tag 把相应的用户找出来
+      // 1. @change 拿到 tag 的值
+      // 2. users computed mapGetter actions->api 发出新的请求 -> vuex store
+      // 3. api/ 后端
+      // 4. node router /tag/:tag queryTag()
+    // }
   }
 }
 </script>

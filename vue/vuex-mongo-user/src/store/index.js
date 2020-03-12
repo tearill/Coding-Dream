@@ -71,15 +71,24 @@ export default new Vuex.Store({
         console.log(users)
         context.commit('setUsers', users) // 提交 mutation
       })
+    },
+    queryTag(context, evt) {
+      const tag = evt.target.value
+      console.log(tag)
+      Api
+        .getUsersByTag(tag, (users) => {
+          context.commit('setUsers', users)
+        })
     }
   },
   getters: { // state 的 computed 函数
     users(state) {
-      console.log('users', Object.prototype.toString.call(state.users))
-      return state.users.map((user, index) => {
-        user.id = user.address.pincode + index
-        return user
-      })
+      // console.log('users', Object.prototype.toString.call(state.users))
+      // return state.users.map((user, index) => {
+      //   user.id = user.address.pincode + index
+      //   return user
+      // })
+      return state.users
     }
   },
   modules: {
