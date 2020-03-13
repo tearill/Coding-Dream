@@ -11,7 +11,26 @@
   少用 data，使用 computed 代替  
   
 - mongodb -> api -> vuex -> component  
-  1. 数据流源头在 mongodb，使用 express 和数据库服务器通信  
+  数据流源头在 mongodb，使用 express 和数据库服务器通信  
+
+  数据流:  
+  node :3000/users/ -> User.find({})  
+  :300/users/tag/:tag -> User.find({ tags: tag })  数据的源头  
+  | |  /\\  
+  \\/  | |  
+  api:  
+    fetchUsers  
+    fetchUserByTag  
+  | |  /\\  
+  \\/  | |  
+  vuex 接管一下  
+  读  this.$store.state.users  
+      this.$store.dispatch('fetchUsers')  
+  写  tag 通过@change  
+      mapActions('queryTag', evt)  
+  | |  /\\  
+  \\/  | |  
+  component App.vue  
 
 
 - 应用场景 vuex 设计思考  
