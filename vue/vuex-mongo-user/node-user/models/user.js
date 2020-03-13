@@ -14,10 +14,15 @@ const userSchema = new Schema({
     }
   },
   "tags": [
-    { type: String }
+    { 
+      type: String,
+      index: true // 给字段添加简单索引
+    }
   ],
   "name": { type: String }
 })
+
+// userSchema.
 
 const User = mongoose.model('User', userSchema)
 
