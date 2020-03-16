@@ -6,7 +6,7 @@
   自己按需定制一份发布 npm  
 
 - 跟平常开发的区别  
-  packages 才是开发目录，防止自己的组件  
+  packages 才是开发目录，放置自己的组件  
   原来的 src 改为 examples  
 
 - 编写 vue.config.js  
