@@ -1,17 +1,20 @@
 <template>
   <!-- <div>Products</div> -->
-  <ul>
-    <li
-      v-for="product in products"
-      :key="product.id">
-      {{ product.title }} - {{ product.price }}
-      <br />
-      <button 
-        @click="addProductToCart(product)">
-        Add to cart
-      </button>
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li
+        v-for="product in products"
+        :key="product.id">
+        {{ product.title }} - {{ product.price }} - {{ product.inventory }}
+        <br />
+        <button 
+          :disabled="!product.inventory"
+          @click="addProductToCart(product)">
+          Add to cart
+        </button>
+      </li>
+    </ul>
+  </div>
   <!-- <div>
     {{ this.$store.state.products.all }}
   </div> -->
@@ -33,5 +36,7 @@ export default {
 </script>
 
 <style scoped>
-
+[disabled] {
+  cursor: not-allowed;
+}
 </style>
