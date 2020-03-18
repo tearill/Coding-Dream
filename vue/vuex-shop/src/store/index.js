@@ -18,7 +18,7 @@ export default new Vuex.Store({
   },
   actions: {
   },
-  modules: {
+  modules: { // 分离管理
     cart, // 当应用复杂起来的时候
     products // 叶节点
   }
