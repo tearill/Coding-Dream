@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <cart />
     <products />
+    <cart />
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
     'products': ProductList
   },
   mounted() {
-    console.log(this.$store.state.products.all)
-    console.log(this.$store.state.cart)
+    // console.log(this.$store.state.products.all)
+    // console.log(this.$store.state.cart)
   }
 }
-</script>>
+</script>
 
 <style>
 #app {
