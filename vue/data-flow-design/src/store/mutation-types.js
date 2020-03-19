@@ -1,0 +1,5 @@
+// 改变的清单
+export const RECORD_USERINFO = 'RECORD_USERINFO'
+export const ADD_CRAT = 'ADD_CRAT'
+export const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY'
+export const CHECKOUT = 'CHECKOUT'
