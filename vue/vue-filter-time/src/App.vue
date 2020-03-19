@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    {{ t | format_date }}
-    <div>{{moment()}}</div>
-    <div>{{moment().format('YYYY-MM-DD HH:mm:ss')}}</div>
+    filter-time {{ t | format_date }}
+    <div>moment {{ moment() }}</div>
+    <br />
+    <div>moment.format() {{ moment().format('YYYY-MM-DD HH:mm:ss') }}</div>
+    <br />
     <div>过去多少时间 {{ moment(t).diff(moment(t), 'minutes') }}分钟前</div>
+    <br />
     <!-- 优惠券 -->
     <!-- 多少时间之后 -->
-    <div>{{moment('2020-02-29').add(2, 'day').format('YYYY-MM-DD') }}</div>
+    <div>{{ moment('2020-02-29').add(2, 'day').format('YYYY-MM-DD') }}</div>
   </div>
 </template>
 
