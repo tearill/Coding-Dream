@@ -84,30 +84,30 @@ export default {
       limit: 20, // mongodb 默认20条/页
       listLoading: true, // 加载数据中
       list: [
-        {
-          "_id": '1234',
-          "name": "Horace1",
-          "orderDate": new Date(),
-          "status": "completed",
-          "shippingFee": 0.5,
-          "total": 20.11
-        },
-        {
-          "_id": '12345',
-          "name": "Horace2",
-          "orderDate": new Date(),
-          "status": "cancel",
-          "shippingFee": 1.5,
-          "total": 25.11
-        },
-        {
-          "_id": '12346',
-          "name": "Horace3",
-          "orderDate": new Date(),
-          "status": "created",
-          "shippingFee": 2.5,
-          "total": 35.11
-        }
+        // {
+        //   "_id": '1234',
+        //   "name": "Horace1",
+        //   "orderDate": new Date(),
+        //   "status": "completed",
+        //   "shippingFee": 0.5,
+        //   "total": 20.11
+        // },
+        // {
+        //   "_id": '12345',
+        //   "name": "Horace2",
+        //   "orderDate": new Date(),
+        //   "status": "cancel",
+        //   "shippingFee": 1.5,
+        //   "total": 25.11
+        // },
+        // {
+        //   "_id": '12346',
+        //   "name": "Horace3",
+        //   "orderDate": new Date(),
+        //   "status": "created",
+        //   "shippingFee": 2.5,
+        //   "total": 35.11
+        // }
       ]
     }
   },
@@ -115,18 +115,45 @@ export default {
     // setTimeout(() => {
     //   this.listLoading = false;
     // }, 1000);
-    Axios.post('/api/orders', {
+    // Axios.post('/api/orders', {
+    //   params: {
+    //     // 分页
+    //     page: this.page,
+    //     limit: this.limit
+    //   }
+    // })
+    // .then(res => {
+    //   console.log(res)
+    //   // this.list = res.data.orders
+
+    //   // setTimeout(() => {
+    //   //   this.listLoading = false
+    //   // }, 1000)
+    //   this.list = res.data.result
+    //   this.total = res.data.total
+    //   setTimeout(() => {
+    //     this.listLoading = false
+    //   }, 1000)
+    // })
+    Axios.get('/api/orders', {
       params: {
         // 分页
+        page: this.page,
+        limit: this.limit
       }
     })
     .then(res => {
       console.log(res)
-      this.list = res.data.orders
+      // this.list = res.data.orders
 
+      // setTimeout(() => {
+      //   this.listLoading = false
+      // }, 1000)
+      this.list = res.data.result
+      this.total = res.data.total
       setTimeout(() => {
-        this.listLoading = false;
-      }, 1000);
+        this.listLoading = false
+      }, 1000)
     })
   },
   methods: {
