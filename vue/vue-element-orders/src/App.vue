@@ -77,7 +77,7 @@ export default {
         page: 1,
         title: '',
         author: "",
-        value: ''
+        value: 'asc'
       },
       options:[
         {
