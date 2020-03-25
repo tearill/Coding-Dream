@@ -34,7 +34,7 @@ Mock.mock(new RegExp('/vue-element-admin/article/list'), 'get', (config) => {
   console.log(config)
   // list 根据 params 分页
   const { page = 1, limit = 20, title, author, value } = param2Obj(config.url)
-  console.log(page, limit, value)
+  console.log(page, limit, value, '+++')
   let mockList = list.filter(item => {
     // 条件一个个加
     if (title && item.title.indexOf(title) < 0) return false
@@ -42,7 +42,8 @@ Mock.mock(new RegExp('/vue-element-admin/article/list'), 'get', (config) => {
     return true
   })
   if (value) {
-    mockList.sort((a, b) => a.value > b.value)
+    value == 'asc' && mockList.sort((a, b) => a.id - b.id)
+    value == 'desc' && mockList.sort((a, b) => b.id - a.id)
   }
   const pageList = mockList.filter((item, index) => 
     index < limit * page && index >= limit * (page - 1)) // 某页数据

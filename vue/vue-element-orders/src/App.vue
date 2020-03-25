@@ -19,13 +19,12 @@
 
       </el-input>
       <br />
-      <el-select v-model="listQuery.value" placeholder="请选择排序方式">
+      <el-select v-model="listQuery.value" placeholder="请选择ID排序方式" @change="getList">
         <el-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
-        :value="item.value"
-        @change="getList">
+        :value="item.value">
         </el-option>
       </el-select>
     </div>
@@ -80,10 +79,16 @@ export default {
         author: "",
         value: ''
       },
-      options:[{
-        value: 'id',
-        label: 'id'
-      }],
+      options:[
+        {
+          value: 'asc',
+          label: '升序'
+        },
+        {
+          value: 'desc',
+          label: '降序'
+        }
+      ],
     }
   },
   created() {
@@ -99,7 +104,10 @@ export default {
         this.list = response.data.list
         this.total = response.data.total
       })
-    }
+    },
+    // change() {
+    //   console.log(this.listQuery.value, 'value');
+    // }
   }
 }
 </script>
