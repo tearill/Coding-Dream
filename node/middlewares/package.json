@@ -1,0 +1,17 @@
+{
+  "name": "middlewares",
+  "version": "1.0.0",
+  "description": "node POST /posts { title, body } 文章  \r RESTFUL 新增文章  \r 登录  \r 未登录，直接访问 /post -> /login  \r 1. 前端  \r    路由首位 Vue router -> beforeRouteEnter  \r    axios 拦截所有的请求 /posts /admin /api 配置  \r 2. 后端  \r    koa express -> http 请求头  \r    POST -> 请求 /post ->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8"
+  }
+}
