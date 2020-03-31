@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="http://api.map.baidu.com/api?v=2.0&ak=dcEXTPAyMl9L72PWNjUvb3yD1PFGdv1n"></script>
+</head>
+<body>
+  <h1>让自己的代码跑在 www.taobao.com</h1>
+  <script>
+    // const myLongitude = '115.941261', // 我的经度
+    //   myLatitude = '28.556865' // 我的纬度 获得 -> h5 lbs API
+    // const kfcLongitude = '115.950531',
+    //   kfcLatitude = '28.549066'
+    window.onload = () => {
+      // const map = new BMap.Map()
+      // const pointA = new BMap.Point(myLongitude, myLatitude)
+      // const pointB = new BMap.Point(kfcLongitude, kfcLatitude)
+      // console.log(map.getDistance(pointA, pointB).toFixed(2) + '米')
+      function getLocation() {
+        // 浏览器嗅探 支持 lbs 功能(附近功能的核心)
+        if (navigator.geolocation) { // h5 localStorage geolocation
+          console.log('navigator')
+          navigator.geolocation.getCurrentPosition(showPosition, showError)
+        }
+      }
+
+      function showPosition(position) {
+        console.log(position)
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const point = new BMap.Point(lng, lat);
+        const geo = new BMap.Geocoder();
+        geo.getLocation(point, (res) => {
+          const addComp = res.addressComponents;
+          const cityName = addComp.city.replace('市', '');
+        });
+      }
+      // 关了定位或者是不支持
+      function showError(err) {
+        console.log('error')
+        console.log(err.code)
+        // code：返回获取位置的状态
+        // 0  :  不包括其他错误编号中的错误
+        // 1  :  用户拒绝浏览器获取位置信息
+        // 2  :  尝试获取用户信息，但失败了
+        // 3  :  设置了timeout值，获取位置超时了
+      }
+
+      getLocation()
+    }
+  </script>
+</body>
+</html>
