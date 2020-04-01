@@ -42,4 +42,26 @@
     loader 能理解的地方去处理  
     .vue js component  
 
-    老式写法：const css = require('css-loader!./index.css');  
+    const css = require('css-loader!./index.css');  
+
+    css 通过 css-loader! css in js  
+    静态资源通过字符串来达到认同  
+
+    - bundle.js 编译后的代码  
+    1. bundle 是一个立即执行函数  
+    将入口分析出来的依赖，做成一个 json 传给 bundle 函数去执行  
+    main.js 依赖于 index.css -> 先做 -> css-loader  
+    main.js 依赖的文件作为 key，内容作为 value  
+    Webpack 大型工程，首先要解决的是模块间的依赖  
+
+    main.js -- a  
+    index.css -- b  
+    index.css import base.css -- c
+    entry a  
+    顺序：c -> b -> a  
+    文件依赖关系组成一个 json object  
+    `__webpack_require__` 是 require 的升级版  
+
+    所有的模块 main.js 入口文件，vuex, store, router, App.vue  
+    函数有优势，第一行，执行到最后一行  
+    Webpack 形参每个模块作为对象注入  
