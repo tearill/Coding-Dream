@@ -6,7 +6,7 @@ const resolve = src => { // 抽离公共的部分
   return path.join(process.cwd(), src);
 }
 const files = findSync('config'); // 读取 config 下面所有的文件读取出来
-
+ 
 module.exports = () => {
   // console.log('在这里做基本配置');
   config // 声明入口有三步
@@ -19,7 +19,5 @@ module.exports = () => {
       .filename('[name].bundle.js'); // 
 
   // webpack modules
-
-
   return config;
 }

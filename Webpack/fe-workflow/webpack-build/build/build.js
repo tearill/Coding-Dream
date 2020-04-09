@@ -14,7 +14,7 @@ const chalk = require('chalk');
 rimraf.sync(path.join(process.cwd(), 'dist')) // 物理路径
 const spinner = ora('开始构建项目...');
 spinner.start();
-
+ 
 // 进行编译
 webpack(config.toConfig(), function(err, status) { // 将返回的配置交给 webpack 去处理
   spinner.stop();
