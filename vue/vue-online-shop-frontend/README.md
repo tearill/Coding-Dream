@@ -2,7 +2,7 @@
 
 ## 全栈应用  
 
-### 开发准备
+### 开发准备  
 
 - 使用Vue + webpack + Express 搭建迷你电商全栈应用  
 
@@ -17,6 +17,8 @@
   - /cart 购物车  
   - /admin/new 创建新的商品  
   - /admin/edit 编辑商品信息  
+  嵌套路由：要注意子路由不需要加 /  
+  子路复用父级的 path  
 
 - 使用 express-generator 脚手架来初始化 Express 项目  
   npm i -g express-generator  
