@@ -20,3 +20,4 @@
     文件/模块分离，一个文件只做一件事  
   5. lib 把 module 放在 config 目录下，一个文件一件事  
     lib 提供 findSync 功能，把所有的 js 文件组成一个数组，输出出来交给 webpack-chain  
+    
