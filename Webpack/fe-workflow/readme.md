@@ -20,4 +20,21 @@
     文件/模块分离，一个文件只做一件事  
   5. lib 把 module 放在 config 目录下，一个文件一件事  
     lib 提供 findSync 功能，把所有的 js 文件组成一个数组，输出出来交给 webpack-chain  
-    
+  6. 可拔插的 Webpack 插件  
+    打包器，打包成最终的产品  
+    - babel  
+      js ts  
+    - css 压缩 stylus -> css  
+      postcss  
+    - html template  
+
+  Webpack 通过 module 将编译的事物，可拔插的 load 进相应的模块进行处理  
+  Webpack + 其他模块的生态链，占据了工作流的生态位  
+  Webpack module 配置模块  
+  在每个模块中有配置流程：  
+    1. test -> 校验什么样的文件需要进入这个文件 /.js$/  
+    2. loader -> 使用相应的 loader 进行处理  
+    3. 配置项  
+      webpack-chain，以 js 的方式处理  
+      ts 和 js 是一家的，ts 是 js 的超集，不用学就可以用  
+      ts 有类型声明的 js，降低 js 的出错率  
