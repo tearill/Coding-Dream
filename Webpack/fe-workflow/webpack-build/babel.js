@@ -1,4 +1,5 @@
-module.exports = function() {
+module.exports = function({ version }) {
+  console.log(version, 'babel.js version---------');
   return {
     'presets': [
       [
@@ -11,7 +12,16 @@ module.exports = function() {
             safari: 8
           }
         }
+      ],
+      [
+        '@babel/preset-typescript', // 对 ts 进行处理
+        {
+          allExtensions: true // 支持所有的扩展
+        }
       ]
+    ],
+    plugins: [
+      '@babel/plugin-transform-typescript'
     ]
   }
 }

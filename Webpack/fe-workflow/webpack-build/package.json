@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-transform-typescript": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
     "chalk": "^4.0.0",
     "cross-env": "^7.0.2",
+    "html-webpack-plugin": "^4.2.0",
     "ora": "^4.0.3",
     "rimraf": "^3.0.2",
     "webpack-chain": "^6.4.0"
