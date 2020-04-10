@@ -20,7 +20,7 @@
     </div>
     <!-- 选项 -->
     <div class="channel">
-      <div v-for="(item, index) in channel" :key="index">
+      <div v-for="(item, index) in channel" :key="index" @click="categoryList(item.id)">
         <img :src="item.icon_url" alt="">
         <p>{{item.name}}</p>
       </div>
@@ -217,6 +217,7 @@ export default {
       this.newCategoryList = data.newCategoryList
     },
     categoryList(id) {
+      console.log(id)
       wx.navigateTo({ 
         url: '/pages/categoryList/main?id=' + id
       });

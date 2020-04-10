@@ -67,7 +67,7 @@ export default {
         return {
             address: {},
             price: '',
-            allprice: '',
+            allprice: 0,
             openId: '',
             addressId: '',
             listData: ''
@@ -105,6 +105,7 @@ export default {
                 this.listData = data.goodsList;
                 this.address = data.address;
             }
+            this.allprice = 0
             this.listData.map((item) => {
                 this.allprice += item.retail_price * item.number;
             })
