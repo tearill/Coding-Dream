@@ -36,4 +36,8 @@ router.get('/address/getListAction', controllers.address.index.getListAction);
 router.get('/address/detailAction', controllers.address.index.detailAction);
 router.post('/address/saveAction', controllers.address.index.saveAction);
 
+// 专题相关的接口
+router.get('/topic/listAction', controllers.topic.index.listAction);
+router.get('/topic/detailAction', controllers.topic.index.detailAction);
+
 module.exports = router
