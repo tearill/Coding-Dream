@@ -157,11 +157,15 @@ export default {
         imageUrl: this.gallery[0].img_url
       };
     },
-    mounted() {
+    async mounted() {
         this.openId = wx.getStorageSync('openId') || '';
         this.id = this.$root.$mp.query.id;
         console.log(this.id, '-------');
-        this.goodsDetail()
+        await this.goodsDetail()
+    },
+    beforeDestory() {
+        this.gallery = []
+        this.info = {}
     },
     methods: {
         async goodsDetail() { // 详情的数据请求
