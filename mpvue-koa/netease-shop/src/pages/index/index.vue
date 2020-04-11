@@ -51,7 +51,7 @@
       <div class="list">
         <ul>
           <scroll-view class="scroll-view" :scroll-x="true">
-            <li v-for="(item, index) in newGoods" :key="index">
+            <li v-for="(item, index) in newGoods" :key="index" @click="toDetail(item.id)">
               <img :src="item.list_pic_url" alt="">
               <p>{{item.name}}</p>
               <p>{{item.goods_brief}}</p>
@@ -75,7 +75,7 @@
       <div class="list">
         <ul>
           <scroll-view class="scroll-view" :scroll-x="true">
-            <li v-for="(item, index) in hotGoods" :key="index">
+            <li v-for="(item, index) in hotGoods" :key="index" @click="toDetail(item.id)">
               <img :src="item.list_pic_url" alt="">
               <p>{{item.name}}</p>
               <p>{{item.goods_brief}}</p>
@@ -113,7 +113,7 @@
       <div class="list" v-for="(item, index) in newCategoryList" :key="index">
         <div class="head">{{item.name}}好物</div>
         <div class="sublist">
-          <div v-for="(subitem, subindex) in item.goodsList" :key="subindex">
+          <div v-for="(subitem, subindex) in item.goodsList" :key="subindex" @click="toDetail(subitem.id)">
             <img :src="subitem.list_pic_url" alt="">
             <p>{{subitem.name}}</p>
             <p>{{subitem.retail_price}}</p>
@@ -207,7 +207,7 @@ export default {
     },
     async getData() { // 请求数据
       const data = await get('/index/index') // http://localhost:5757/lm/index/index
-      console.log(data)
+      console.log(data, '---------data')
       this.banner = data.banner
       this.channel = data.channel
       this.brandList = data.brandList
@@ -247,6 +247,9 @@ export default {
       wx.navigateTo({ 
         url: '/pages/topicDetail/main?id=' + id 
       });
+    },
+    toDetail(id) {
+      wx.navigateTo({ url: '/pages/goods/main?id=' + id });
     }
   }
 };
