@@ -9,6 +9,8 @@ router.get('/index/index', controllers.home.index);
 
 // 分类相关的接口
 router.get('/catagory/categoryNav', controllers.category.index.categoryNav);
+router.get('/category/indexAction', controllers.category.index.indexAction);
+router.get('/category/currentAction', controllers.category.index.currentAction);
 
 // 搜索相关的接口
 router.get('/search/indexaction', controllers.search.index.indexAction); // 取出搜索记录和热门搜索
