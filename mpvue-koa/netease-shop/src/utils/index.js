@@ -29,18 +29,18 @@ function request (url, method, data, header = {}) {
   return new Promise((resolve, reject) => {
     wx.request({
       url: host + url, //开发者服务器接口地址",
-      data: data, //请求的参数",
       method: method,
+      data: data, //请求的参数",
       header: {
         "content-type": "application/json"
       },
       success (res) {
         wx.hideLoading();
-        resolve(res.data)
+        resolve(res.data);
       },
       fail (error) {
         wx.hideLoading();
-        reject(false)
+        reject(false);
       },
       complete () {
         wx.hideLoading();
@@ -50,11 +50,11 @@ function request (url, method, data, header = {}) {
 }
 
 export function get (url, data) {
-  return request(url, 'GET', data)
+  return request(url, 'GET', data);
 }
 
 export function post (url, data) {
-  return request(url, 'POST', data)
+  return request(url, 'POST', data);
 }
 
 export function getStorageOpenid() {
@@ -63,6 +63,23 @@ export function getStorageOpenid() {
     return openId;
   } else {
     return '';
+  }
+}
+
+// 是否登录
+export function login() {
+  const userInfo = wx.getStorageSync('userInfo');
+  if (userInfo) {
+    return userInfo;
+  }
+}
+
+export function toLogin() {
+  const userInfo = wx.getStorageSync('userInfo');
+  if (!userInfo) {
+    wx.navigateTo({ url: '/pages/login/main' });
+  } else {
+    return true;
   }
 }
 
