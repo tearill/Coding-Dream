@@ -83,6 +83,18 @@ export function toLogin() {
   }
 }
 
+export function throttle(func, delay) {
+  let time1 = Date.now();
+  // 里面这层函数就是返回给 onClick 的函数
+  return function(...args) {
+    let time2 = Date.now();
+    if (time2 - time1 > delay) { // 执行时机到了
+      func.call(this, ...args);
+      time1 = time2;
+    }
+  }
+}
+
 export default {
   formatNumber,
   formatTime,

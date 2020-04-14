@@ -3,7 +3,7 @@
       <div class="head">
           <div>
               <img src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/search2-2fb94833aa.png" alt="">
-              <input type="text" confirm-type="search" focus="true" placeholder="商品搜索" v-model="words" @focus="inputFocus" @input="tipSearch" @confirm="searchWords">
+              <input type="text" confirm-type="search" focus="true" placeholder="商品搜索" v-model="words" @focus="inputFocus" @confirm="searchWords">
               <img @click="clearInput" class="del" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/clearIpt-f71b83e3c2.png" alt="">
           </div>
           <div @click="cancel">取消</div>
@@ -59,7 +59,8 @@
 </template>
 
 <script>
-import { get, post } from "../../utils"
+import { get, post, throttle } from "../../utils"
+import _ from 'lodash'
 export default {
     data () {
         return {
@@ -75,7 +76,14 @@ export default {
     },
     mounted() {
         this.openid = wx.getStorageSync('openId') || '';
-        this.getHotData();
+        this.getHotData()
+        this.tipSearch = _.debounce(this.tipSearchOrigin, 500)
+    },
+    watch: {
+        words(newVal) {
+            this.words = newVal
+            this.tipSearch()
+        }
     },
     methods: {
         clearInput() { // 清空搜索框
@@ -102,10 +110,12 @@ export default {
             // 展示搜索提示信息
             this.tipSearch();
         },
-        async tipSearch() { // 获取搜索提示语(自动补全)
+        async tipSearchOrigin() { // 获取搜索提示语(自动补全)
             const data = await get('/search/helperaction', {
                 keyword: this.words
             })
+            console.log('start')
+            // console.log(this.words)
             // console.log(data)
             this.tipsData = data.keywords
         },
