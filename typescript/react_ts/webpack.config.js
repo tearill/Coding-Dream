@@ -9,13 +9,17 @@ module.exports = {
   resolve: { // 帮处理哪些静态文件
     extensions: ['.js', '.ts', '.tsx'], // ts typescript 后续要处理的文件全部添加在这里
   },
-  entry: {
-    app: './index.ts', // 入口 webpack 打包入口可以有多个
+  entry: { // 入口 webpack 打包入口可以有多个
+    app: './index.tsx', // 业务代码打包入口
     vendorStyles: [ // bootstrap css 的框架，开发中都是业务代码在改变
       // 框架要被打包，但是不会被修改，单独打包  
       '../node_modules/bootstrap/dist/css/bootstrap.css',
     ],
-    vendor: ['react', 'react-dom'],
+    vendor: [ // 单独的依赖关系链
+      'react', 
+      'react-dom',
+      'react-router-dom',
+    ],
   },
   output: {
     path: path.join(basePath, 'dist'), // 打包出口路径
@@ -24,7 +28,7 @@ module.exports = {
   module: { // 分成不同的模块进行打包的处理
     rules: [
       {
-        test: /\.(ts|tsx)$/, // 文件匹配
+        test: /\.tsx?$/, // 文件匹配
         exclude: /node_modules/, // 排除和业务无关的(浪费时间)
         loader: 'awesome-typescript-loader', // 开启合适的 loader
         options: { // 选项

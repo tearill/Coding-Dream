@@ -16,5 +16,13 @@
   业务代码是要经常改变的，有 hash 的需要 -> 通知客户端更新  
   把几个月，永远不更新的文件(框架、第三方库等等)作为独立的入口单独打包，后面访问的时候就不用再下载，加快访问速度  
   (面试题：entry 可以有多个打包入口吗？为什么？)  
+  依赖网 -> 单独的关系链 -> 单独的入口  
   vendor -> 库 Vue Vuex Vue-router  
   提升编译速度  同时保障及改善了用户浏览体验，利用缓存  
+5. tsx 在工作流里是如何完成编译支持的  
+  在 webpack -> resolve -> extension 中支持 tsx 文件  
+  test -> `/\.tsx?/` -> awesome-typescript-loader -> tsconfig.json -> react -> babel  
+  jsx 良好表现的 template 语法  
+
+- dist 目录不删除？  
+  把历史版本都留下，利于回滚代码  

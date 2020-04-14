@@ -1,0 +1,20 @@
+// react -> react + ts   jsx -> tsx
+// ts -> js 配置
+// js ts super  java
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "jsx": "react",
+    "noLib": false,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules"
+  ]
+}
