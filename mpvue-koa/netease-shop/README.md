@@ -1,5 +1,5 @@
 # netease-shop
-- mpvue + koa3 高仿网易严选小程序
+- mpvue + koa3 实现网易严选小程序
 - 前端
 
 > A Mpvue project
