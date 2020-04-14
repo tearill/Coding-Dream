@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import { get, post, throttle } from "../../utils"
-import _ from 'lodash'
+import { get, post, debounce } from "../../utils"
+// import _ from 'lodash'
 export default {
     data () {
         return {
@@ -77,7 +77,9 @@ export default {
     mounted() {
         this.openid = wx.getStorageSync('openId') || '';
         this.getHotData()
-        this.tipSearch = _.debounce(this.tipSearchOrigin, 500)
+        this.clearInput()
+        // this.tipSearch = _.debounce(this.tipSearchOrigin, 500)
+        this.tipSearch = debounce(this.tipSearchOrigin, 400)
     },
     watch: {
         words(newVal) {

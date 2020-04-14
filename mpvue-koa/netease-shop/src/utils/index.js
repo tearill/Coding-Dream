@@ -95,6 +95,16 @@ export function throttle(func, delay) {
   }
 }
 
+export const debounce = (fn, delay) => { // 1
+  let timer = null;
+  return (...args) => { // 4
+      clearTimeout(timer); // 5
+      timer = setTimeout(() => { // 3
+          fn.apply(this, ...args);
+      }, delay);
+  }
+}
+
 export default {
   formatNumber,
   formatTime,

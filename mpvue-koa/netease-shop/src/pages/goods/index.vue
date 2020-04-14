@@ -16,7 +16,7 @@
           <div class="item">48小时快速退款</div>
           <div class="item">满88元免邮费</div>
       </div>
-      <div class="goods-info">
+      <div class="goods-info" v-if="info.id">
           <div class="c">
               <p>{{info.name}}</p>
               <p>{{info.goods_brief}}</p>
@@ -157,11 +157,11 @@ export default {
         imageUrl: this.gallery[0].img_url
       };
     },
-    async mounted() {
+    mounted() {
         this.openId = wx.getStorageSync('openId') || '';
         this.id = this.$root.$mp.query.id;
         console.log(this.id, '-------');
-        await this.goodsDetail()
+        this.goodsDetail()
     },
     beforeDestory() {
         this.gallery = []
