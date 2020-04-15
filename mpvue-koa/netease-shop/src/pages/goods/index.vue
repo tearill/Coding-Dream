@@ -157,15 +157,30 @@ export default {
         imageUrl: this.gallery[0].img_url
       };
     },
-    mounted() {
+    onShow() {
         this.openId = wx.getStorageSync('openId') || '';
         this.id = this.$root.$mp.query.id;
         console.log(this.id, '-------');
+        wx.showLoading({
+          mask: true, //显示透明蒙层，防止触摸穿透,
+        //   success: res => {}
+        });
         this.goodsDetail()
     },
-    beforeDestory() {
+    beforeRouteLeave(to, from, next) {
+        console.log('---beforeRouteLeave---')
+        next()
+    },
+    onUnload() {
+        console.log('---onUnload---')
         this.gallery = []
         this.info = {}
+    },
+    mounted() {
+        // this.openId = wx.getStorageSync('openId') || '';
+        // this.id = this.$root.$mp.query.id;
+        // console.log(this.id, '-------');
+        // this.goodsDetail()
     },
     methods: {
         async goodsDetail() { // 详情的数据请求
@@ -184,6 +199,7 @@ export default {
             this.collectFlag = data.collected;
             this.allnumber = data.allnumber;
             this.allPrice = data.info.retail_price;
+            wx.hideLoading();
         },
         showType() {
             this.showpop = !this.showpop;
