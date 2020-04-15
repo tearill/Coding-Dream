@@ -2,8 +2,11 @@ import * as React from 'react';
 
 export const Cpn = () => {
   return (
+    // <div>
+    //   Cpn
+    // </div>
     <div>
-      Cpn
+      <a href="#/detail">detail</a>
     </div>
   )
 }
