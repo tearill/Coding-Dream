@@ -3,3 +3,9 @@ body {
   /* background-color: green; */
   background: url('../imgs/dlam.jpg') no-repeat green;
 }
+
+.font {
+  z-index: 99;
+  /* font-size: 60px; */
+  color: red;
+}
