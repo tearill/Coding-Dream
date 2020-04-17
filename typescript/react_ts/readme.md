@@ -26,3 +26,12 @@
 
 - dist 目录不删除？  
   把历史版本都留下，利于回滚代码  
+
+- React 语法，ts  
+  router + redux + api 类型约束  
+
+- React.StatelessComponent  
+  <{}> 怎么相同  
+  1. App AppRouter 引入的路由 / 根组件，在抛出的时候声明类型定义 -> 只需要一个 header 的 html 结构 -> StatelessComponent 组件  
+  2. React.StatelessComponent<{}> ts type 声明的类型，定义文件在 node_modules/@types/react/index.d.ts -> `StatelessComponent<P = {}> = FunctionComponent<P>`  
+- bootstrap webpack entry 多入口引入  
