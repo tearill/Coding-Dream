@@ -14,7 +14,7 @@
   ext -> loader 对应的  
   package.json 分析，报错  
   **css-loader 为 css 后缀解析以及 css 内的 @import 外部资源服务，分析内部有没有引用其他文件**  
-  **tyle-loader 将 css 样式生成静态资源内联，把导入的模块作为样式添加到 DOM**  
+  **style-loader 将 css 样式生成静态资源内联，把导入的模块作为样式添加到 DOM**  
 
 2. use 定制性，Webpack 是用来用的  
   用来修，当工作流出现问题的时候要会处理  
