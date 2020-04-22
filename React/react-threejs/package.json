@@ -1,0 +1,38 @@
+{
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-react": "^7.9.4",
+    "autobind-decorator": "^2.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-react": "^7.19.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-three-renderer": "^3.2.4",
+    "three": "^0.79.0"
+  },
+  "name": "react-threejs",
+  "description": "1. three.js webgl 3D 渲染 canvas 3d  \r   形状 材质 camera screen  \r   react + three.js 组件化开发 可视化应用  \r 2. 写高质量代码，由 eslint 驱动  \r 3. react jsx 解析？  .jsx -> .tsx -> webpack.config.js -> awesome-typescript-loader -> tsconfig.json jsx -> react 编译  \r   babel preset + plugin",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --inline --hot --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
