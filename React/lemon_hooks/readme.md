@@ -41,3 +41,5 @@ npm i @babel/cli @babel/core  @babel/preset-env @babel/polyfill --save-dev
     style-loder 开发的时候  
     定位 p color 错误，style 代码很多有也忘了位置在哪里  
     webpack 帮助定位错误 -> 点一下就能跳到错误的源码所在行  
+    devtool: "source-map" -> 源码映射  
+    source-map 帮助映射到源码的位置，自己真正写的代码的位置，而不是编译兼容后的代码
