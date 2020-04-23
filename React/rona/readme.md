@@ -6,7 +6,8 @@
 
 - next.js  
   快速的启动 React 开发  
-  pages 目录下文件名就是路由的地址  
+  pages 目录下文件名就是路由的地址，SEO 更友好  
 
 - styled-components  
-  特别适合用来构建
+  特别适合用来构建页面  
+  
