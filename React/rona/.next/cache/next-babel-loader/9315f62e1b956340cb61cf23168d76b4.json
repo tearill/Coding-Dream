@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default function IndexPage() {}","map":{"version":3,"sources":["E:/Coding-Dream/React/rona/pages/index.js"],"names":["IndexPage"],"mappings":"AAAA,eAAe,SAASA,SAAT,GAAqB,CAEnC","sourcesContent":["export default function IndexPage() {\r\n  \r\n}"]},"metadata":{},"sourceType":"module"}
