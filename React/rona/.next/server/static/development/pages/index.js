@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -158,6 +158,7 @@ function CountrySelector() {
     }
   }, "Currently Showing ", selectedCountry), __jsx("select", {
     onChange: e => setSelectedCountry(e.target.value),
+    defaultValue: selectedCountry,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -167,11 +168,10 @@ function CountrySelector() {
   }, countries.countries.map(country => __jsx("option", {
     key: country.name,
     value: country.iso3,
-    selected: country.iso3 === selectedCountry ? true : false,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, country.iso3))), __jsx(_Stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -445,7 +445,7 @@ function useStats(url) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

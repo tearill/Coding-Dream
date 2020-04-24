@@ -70,6 +70,7 @@ function CountrySelector() {
     onChange: function onChange(e) {
       return setSelectedCountry(e.target.value);
     },
+    defaultValue: selectedCountry,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -80,11 +81,10 @@ function CountrySelector() {
     return __jsx("option", {
       key: country.name,
       value: country.iso3,
-      selected: country.iso3 === selectedCountry ? true : false,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 21,
         columnNumber: 13
       }
     }, country.iso3);
@@ -4494,7 +4494,7 @@ function useStats(url) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!**********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5CCoding-Dream%5CReact%5Crona%5Cpages%5Cindex.js ***!
   \**********************************************************************************************************************/
@@ -4517,5 +4517,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
