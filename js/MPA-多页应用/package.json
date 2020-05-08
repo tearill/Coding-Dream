@@ -1,0 +1,24 @@
+{
+  "name": "mpa-demo",
+  "version": "1.0.0",
+  "description": "```js\r <div id=\"app\"></div>\r <Route path=\"\" component={} />\r ```\r 1. `<div id=\"app\"></div>`  \r 2. js 请求，app 构造  \r 3. 看到页面",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
