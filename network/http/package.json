@@ -1,0 +1,12 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "description": "- Web 交互的数据格式是什么？如何在用户请求的时候提供多种数据返回格式的选择？  \r   ajax json/html  \r   传统老的浏览器 text/html  \r   动态 web ajax text/json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
