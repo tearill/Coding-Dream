@@ -11,7 +11,7 @@
     - 三次握手，建立起连接  
       确认双方都有接收和发送数据的能力  
       1. browser syn(seq+1) SYN_SENT 同步序列号  
-      2. ack = j + 1 返回，阿松一个自己的 sql = k  
+      2. ack = j + 1 返回，发送一个自己的 seq = k  
       3. browser established 状态 ack = k + 1
     - 四次挥手，断开连接  
       1. A -> TCP 发送完毕 -> 向 B 发送 FIN 报文  
