@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件上传</title>
+</head>
+
+<body>
+  <!-- 对于二进制数据或者是包含非 ASCII 码字符，x-www-form-urlencoded 是低效的 -->
+  <form action="/file" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="上传文件" />
+  </form>
+</body>
+
+</html>
