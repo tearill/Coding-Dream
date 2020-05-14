@@ -19,6 +19,7 @@ const client = net.createConnection({
 })
 
 // 响应报文
+// 分段
 client.on('data', (data) => {
   console.log(data.toString());
 })
