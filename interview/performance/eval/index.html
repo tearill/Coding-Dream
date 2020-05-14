@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eval</title>
+</head>
+<body>
+  <script>
+    // eval 不安全
+    const xmlhttp = new XMLHttpRequest()
+    xmlhttp.onreadystatechange = function (event) {
+      // console.log(event)
+      if (xmlhttp.readyState === 4 && xmlhttp.status == 200) {
+        // console.log(event.target.responseText)
+        // const data = JSON.parse(event.target.responseText)
+        // 把字符串执行
+        const data = eval(event.target.responseText)
+        console.log(data)
+      }
+    }
+    xmlhttp.open('GET', '/post.json', true)
+    xmlhttp.send(null)
+  </script>
+</body>
+</html>
