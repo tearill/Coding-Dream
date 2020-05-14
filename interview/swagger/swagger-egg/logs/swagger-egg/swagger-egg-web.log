@@ -1,0 +1,35 @@
+2020-05-12 15:47:50,682 ERROR 24780 [-/127.0.0.1/-/15ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 24780
+hostname: DESKTOP-FVDPJOB
+
+2020-05-12 15:51:23,615 ERROR 11680 [-/127.0.0.1/-/8ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (E:\Coding-Dream\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 11680
+hostname: DESKTOP-FVDPJOB
+
+2020-05-12 16:56:53,295 INFO 13260 [egg-swagger-doc] register router: get /swagger-doc
+2020-05-12 16:56:53,330 INFO 13260 [egg-swagger-doc] register router: get /swagger-ui.html
+2020-05-12 16:56:53,332 INFO 13260 [egg-swagger-doc] register router: get /version01/controllers/selectById for controller-book-selectById 
+2020-05-12 16:56:53,396 INFO 13260 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2020-05-12 16:59:59,294 INFO 13260 [egg-sequelize](3ms) Executed (default): SELECT `Id`, `Name`, `Price`, `Author`, `MakeSource`, `BookCategoryId`, `Inventory`, `IsDeleted`, `IsSoldOut`, `CreatedDate`, `UpdatedDate` FROM `book` AS `book` WHERE `book`.`Id` = '6';

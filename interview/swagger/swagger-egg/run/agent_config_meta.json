@@ -1,0 +1,293 @@
+{
+  "keys": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+  "swaggerdoc": {
+    "dirScanner": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "apiInfo": {
+      "title": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+      "description": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+      "version": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js"
+    },
+    "schemes": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "consumes": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "produces": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "enableSecurity": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "routerMap": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "basePath": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-swagger-doc\\config\\config.default.js",
+    "securityDefinitions": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-swagger-doc\\config\\config.default.js"
+  },
+  "sequelize": {
+    "dialect": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "host": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "port": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "database": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "username": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "password": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+    "define": {
+      "freezeTableName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js",
+      "timestamps": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\config\\config.default.js"
+    }
+  },
+  "session": {
+    "maxAge": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-session\\config\\config.default.js",
+    "key": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-session\\config\\config.default.js",
+    "httpOnly": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-session\\config\\config.default.js",
+    "encrypt": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-swagger-doc\\config\\config.default.js",
+      "type": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "refererWhiteList": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.local.js",
+      "maxAge": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js",
+      "checkAddress": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-onerror\\config\\config.default.js",
+    "templatePath": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js",
+    "dirs": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieDomain": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-schedule\\config\\config.default.js",
+      "file": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-schedule\\config\\config.default.js"
+  },
+  "multipart": {
+    "mode": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "autoFields": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileSize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileExtensions": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "tmpdir": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-multipart\\config\\config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-development\\config\\config.default.js",
+    "ignoreDirs": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-development\\config\\config.default.js",
+    "fastReady": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-development\\config\\config.default.js",
+    "reloadOnDebug": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-development\\config\\config.default.js",
+    "overrideDefault": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js",
+    "dir": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js",
+    "dynamic": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-static\\config\\config.default.js"
+  },
+  "view": {
+    "root": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-view\\config\\config.local.js",
+    "defaultExtension": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultViewEngine": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-view\\config\\config.default.js",
+    "mapping": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "env": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "name": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "cookies": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "maxIpsCount": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "maxProxyCount": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "version": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "description": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "main": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "scripts": {
+      "dev": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    },
+    "keywords": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "author": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "license": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "dependencies": {
+      "egg": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "egg-bin": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "egg-sequelize": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "egg-swagger-doc": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "mysql2": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "textLimit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "strict": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "depth": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    },
+    "onerror": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "logger": {
+    "dir": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "env": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "level": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "appLogName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "logging": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "serverTimeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "port": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+      "hostname": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js",
+    "responseTimeout": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+  },
+  "onClientError": "E:\\Coding-Dream\\interview\\swagger\\swagger-egg\\node_modules\\egg\\config\\config.default.js"
+}
