@@ -1,0 +1,22 @@
+.box {
+  display: flex;
+  flex-wrap: wrap; // 超出换行
+  width: 300px;
+  height: 300px;
+  position: relative;
+  .item {
+    box-sizing: border-box; // 防止撑大
+    width: 100px;
+  }
+  // 滑块
+  .spin {
+    box-sizing: border-box;
+    position: absolute; // 脱离文档流防止造成其他元素的重绘
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .2);
+  }
+}

@@ -1,0 +1,21 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.box .item {
+  box-sizing: border-box;
+  width: 100px;
+}
+.box .spin {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
