@@ -1,4 +1,5 @@
 let { app, BrowserWindow } = require('electron') // node 端运行
+const hanleIPC = require('./ipc') // ipc 模块化
 
 let win
 app.on('ready', () => {
@@ -9,6 +10,6 @@ app.on('ready', () => {
       nodeIntegration: true
     }
   }) // chrominum 启动 桌面的代表就是窗口
-  // win.loadFile('./index.html')
+  hanleIPC()
   win.loadURL('http://localhost:3000')
 })
