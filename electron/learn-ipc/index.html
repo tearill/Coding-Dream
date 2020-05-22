@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello</h1>
+
+  <script>
+    // html -> chromum 作为文件来运行
+    const { ipcRenderer } = require('electron')
+    const events =  require('events')
+    // node 异步事件循环机制的实现
+    // ipcRenderer 拥有 send 方法 -> 本质是 events.EventEmitter 的子类实现
+    // 发布订阅模式 send 机制
+    console.log(ipcRenderer instanceof events.EventEmitter, '----')
+
+    ipcRenderer.send('greet', {
+      message: 'hello main'
+    })
+
+    ipcRenderer.on('greet', (event, args) => {
+      console.log(args)
+    })
+
+  </script>
+</body>
+</html>
