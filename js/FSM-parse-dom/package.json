@@ -1,0 +1,15 @@
+{
+  "name": "FSM-parse-dom",
+  "version": "1.0.0",
+  "description": "1. Access-Control-Allow-Origin 设置哪个源可以访问我  \r 2. Access-Control-Allow-Headers 允许携带哪个头访问我  \r 3. Access-Control-Allow-Methods 允许哪个方法访问我  \r 4. Access-Control-Allow-Credentials 允许携带 cookie  \r 5. Access-Control-Max-Age 预检的存活时间  \r 6. Access-Control-Expose-Headers 允许返回的头，把响应头暴露出去给前端",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css": "^2.2.4"
+  }
+}

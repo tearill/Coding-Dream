@@ -1,10 +1,18 @@
+const css = require('css');
+const match = require('./match');
 let htmlStr = `<html>
   <head>
     <style>
-    body div #myid {
-      width: 100px;
-      background-color: #fff; 
-    }
+      body div #myid {
+        width: 100px;
+        background-color: #fff;
+      }
+      .text {
+        color: #888;
+      }
+      span {
+        font-size: 30px;
+      }
     </style>
   </head>
   <body>
@@ -28,6 +36,57 @@ let htmlStr = `<html>
 // end  栈顶元素 [ length -  1] 和 自己标签名一样 配对 ? pop
 // CSS 树
 // 
+// 所有的 css 规则，遇到 style link @import 添加进来
+let rules = []
+function addCSSrule(text) {
+  let ast = css.parse(text);
+  rules.push(...ast.stylesheet.rules);
+}
+function computerCss(element) {
+  if (!element.computerStyle) {
+    element.computerStyle = {}
+  }
+  // 栈内元素 就是 element 父级
+  let elments = stack.slice(0).reverse();
+  for (let rule of rules) {
+    // if (!rule) return;
+    // 从后往前
+    console.log(rule.selectors[0]);
+    let selectorParts = rule.selectors[0].split(' ').reverse();
+    if (!match(element, selectorParts[0])) {
+      continue;
+    }
+    // selectorParts:  #myid div body
+    //                 [p1, p2, p3, p4]
+    // element 的 父级
+    let j = 1;
+    for (let i = 0; i < elments.length; i++) {
+      if (match(elments[i], selectorParts[j])) {
+        j++;
+      }
+    }
+    // 所有的选择器遍历 OK
+    if (j >= selectorParts.length) {
+      // 
+      /**
+       * "width": {
+            "value": "100px"
+          },
+          "background-color": {
+            "value": "#fff"
+          }
+       */
+      let computerStyle = element.computerStyle;
+      for (let declaration of rule.declarations) {
+        let { property, value } = declaration;
+        if (!computerStyle[property]) {
+          computerStyle[property] = {};
+        }
+        computerStyle[property].value = value;
+      }
+    }
+  }
+}
 let currentToken = null;
 let currentTextNode = null;
 let currentAttribuate = null;
@@ -121,6 +180,7 @@ function attribuateValue(c) {
     return attribuateValue;
   } else {
     // c 丢了
+    // <div id="myid">
     currentToken.attributes.push(currentAttribuate);
     currentAttribuate = null;
     return beforeAttribuate(c);
@@ -149,6 +209,8 @@ function emit(token) {
       attributes: token.attributes,
       tagName: token.tagName
     }
+    // 得到一个element  该element css 计算
+    computerCss(element);
     // 当前 element 一定是栈顶的 子元素
     top.children.push(element);
     stack.push(element);
@@ -157,6 +219,9 @@ function emit(token) {
     if (top.tagName === token.tagName) {
       stack.pop();
       currentTextNode = null;
+      if (top.tagName === 'style') {
+        addCSSrule(top.children[0].content);
+      }
     } else {
       throw new Error('no match');
     }
