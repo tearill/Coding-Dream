@@ -1,0 +1,15 @@
+{
+  "name": "signal",
+  "version": "1.0.0",
+  "description": "- 如果有微博有新的头条或评论，怎么获取？  \r   HTTP 断开连接的 简单请求  \r   html5 WebSocket -> tcp 持久化 服务器端可以主动推送",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^7.3.0"
+  }
+}
