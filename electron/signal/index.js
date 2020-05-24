@@ -30,19 +30,29 @@ wss.on('connection', function connection(ws, request) {
     let { event, data } = parseMessage
     console.log(event)
     if (event === 'login') {
-      ws.sendData('logined', { code })
-    } else if (event === 'controll') {
-      let remote = data.remote // 想要控制的主机
-      console.log(remote)
-      if (code2ws.has(remote)) {
-        ws.sendData('controlled', { remote }) // 已经控制了谁
-        ws.sendRemote = code2ws.get(remote).sendData // 被控制的主机发送消息
-        console.log(ws.sendRemote)
-        ws.sendRemote('be-controlled', {
-          remote: code // 被控制的主机信息
+      ws.sendData('logined', { code }) // 记录登录的主机
+    } else if (event === 'control') {
+      let remote = data.remote // 想要控制的主机 code
+
+      console.log(remote, 'remote code') // 被控制的主机 code
+
+      if (code2ws.has(remote)) { // 查询被控制的主机是否登录
+        ws.sendData('controlling', { remote }) // 已经控制了谁
+
+        console.log(code2ws.get(remote), '~~~~~~~~~~~') // code2ws.get(remote) 被控制的主机信息
+
+        ws.sendRemote = code2ws.get(remote).sendData // 拿到被控制主机的 sendData 函数
+        // console.log(ws.sendRemote)
+
+        console.log(code, '------')
+
+        ws.sendRemote('being-controlled', {
+          remote: code // 被控制的主机 code
         })
       }
     }
+    // {"event":"login"}
+    // {"event":"control","data":{"remote":663636}}
     // ws.send('hello')
   })
 })
