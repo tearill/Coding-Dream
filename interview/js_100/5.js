@@ -49,12 +49,12 @@
 
 Object.defineProperty(window, 'a', {
   get: function() {
-    // if (this.value) {
-    //   return this.value += 1
-    // } else {
-    //   return this.value = 1
-    // }
-    return this.value += 1
+    if (this.value) {
+      return this.value += 1
+    } else {
+      return this.value = 1
+    }
+    // return this.value += 1
   }
 })
 
