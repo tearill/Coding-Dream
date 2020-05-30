@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue-array 中 pop push 方法</title>
+</head>
+<body>
+  <script>
+    const oldArrayProto = Array.prototype;
+    // 截胡
+    const arrProto = Object.create(oldArrayProto);
+
+    ['push', 'pop', 'shift', 'unshift', 'splice'].forEach(methodName => { // 改写原型方法
+      arrProto[methodName] = function() {
+        oldArrayProto[methodName].call(this, ...arguments); // 原来怎么执行现在还是怎么执行
+        updateView(); // 额外附加一步更新视图
+      }
+    })
+
+    function defineReactive(target, key, value) {
+      observer(value); // 递归遍历所有的属性，实现深度监听
+      Object.defineProperty(target, key, {
+        get() {
+          return value;
+        },
+        set(newVal) {
+          observer(value); // 劫持新的值
+          if (newVal !== value) {
+            value = newVal;
+            updateView(); // 更新视图
+          }
+        }
+      })
+    }
+
+    function updateView() {
+      console.log('视图更新');
+    }
+
+    function observer(target) {
+      if (typeof target !== 'object' || target === null) {
+        return target;
+      }
+
+      // push -> 改写原型
+      if (Array.isArray(target)) { // 数组
+        target.__proto__ = arrProto;
+      }
+
+      for (let key in target) {
+        defineReactive(target, key, target[key]);
+      }
+    }
+
+    const data = {
+      name: 'Horace',
+      info: {
+        address: 'BeiJing'
+      },
+      nums: [10, 20, 30]
+    }
+
+    observer(data);
+
+    // data.nums[0] = 11; // 不需要响应
+    data.nums.push(40); // 支持
+    data.name = 'new Horace';
+    data.info.address = 'ShenZhen'
+  </script>
+</body>
+</html>
