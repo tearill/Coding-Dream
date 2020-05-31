@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint-API</title>
+  <style>
+    #text {
+      --circle-color: rgba(0, 255, 0);
+
+      font-size: 36px;
+      background-image: paint(circle);
+    }
+  </style>
+</head>
+
+<body>
+  <textarea name="" id="text" cols="30" rows="10">
+    CSS is Awesome
+  </textarea>
+  <script>
+    CSS.registerProperty({
+      name: '--circle-color',
+      syntax: '<color>',
+      initialValue: 'black',
+      inherits: false
+    })
+    CSS.paintWorklet.addModule('./circle.js')
+  </script>
+</body>
+
+</html>
