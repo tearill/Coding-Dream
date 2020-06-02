@@ -34,7 +34,7 @@ block-level-box：从上到下布局
 relative position：
 
 ## base line  
-基线  
+基线   
 
 ## reference  
 https://www.w3.org/TR/2020/WD-css-position-3-20200519/#relpos-insets  
