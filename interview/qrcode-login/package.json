@@ -1,0 +1,22 @@
+{
+  "name": "qrcode-login",
+  "version": "1.0.0",
+  "description": "1. 业务考题  \r   JWT(cookie session) 轮询 二维码扫码登录  \r 2. node 前端 登录 API 的业务分开理解",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "exrpess": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.17",
+    "nodemon": "^2.0.4",
+    "qrcode": "^1.4.4"
+  }
+}
