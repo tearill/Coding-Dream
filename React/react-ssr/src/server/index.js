@@ -3,6 +3,9 @@ import express from 'express';
 import React from 'react'; // 只要使用了 jsx 就要引入 react
 // client 渲染成 dom | server 渲染成字符串
 import { renderToString }  from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config';
+import routes from '../Routes';
 import Header from '../components/Header.jsx';
 
 const app = express();
@@ -11,7 +14,11 @@ app.use(express.static('static'));
 
 app.get('*', (req, res) => {
   // 入口组件 jsx
-  const App = (<Header />);
+  const App = (
+    <StaticRouter location={req.url}>
+      { renderRoutes(routes) }
+    </StaticRouter>
+  );
   // jsx -> babel -> React-createElement()
   const htmlStr = renderToString(App); // 渲染成字符串
   console.log(htmlStr);
