@@ -1,26 +1,34 @@
 // 借助 webpack 编译转换
 import express from 'express';
 import React from 'react'; // 只要使用了 jsx 就要引入 react
-// client 渲染成 dom | server 渲染成字符串
-import { renderToString }  from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import routes from '../Routes';
+// client 渲染成 dom | server 渲染成字符串
+import { renderToString } from 'react-dom/server';
 import Header from '../components/Header.jsx';
+import Routes from '../Routes';
+import { getClientStore } from '../store/index'
+
 
 const app = express();
+const store = getClientStore();
 // 把 static 目录做了静态资源映射 => 通过 url 访问静态资源
-app.use(express.static('static'));
-
+// koa-static
+app.use(express.static('static'))
+// ejs jsp jade vue-template:  if for 
 app.get('*', (req, res) => {
-  // 入口组件 jsx
+  console.log(req.url);
+  // 入口组件 jsx  context
   const App = (
-    <StaticRouter location={req.url}>
-      { renderRoutes(routes) }
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url}>
+        { renderRoutes(Routes) }
+      </StaticRouter>
+    </Provider>
   );
   // jsx -> babel -> React-createElement()
-  const htmlStr = renderToString(App); // 渲染成字符串
+  const htmlStr = renderToString(App);
   console.log(htmlStr);
   res.send(`<!DOCTYPE html>
   <html lang="en">
@@ -30,19 +38,15 @@ app.get('*', (req, res) => {
     <title>Document</title>
   </head>
   <body>
-    <!-- root ReactDOM.render -->
-    <div id="root">
-      ${htmlStr}
-    </div>
-    <!-- 请求 localhost:3000/index.js => 前端的打包代码 -->
-    <!-- hydrate 绑定事件 -->
+    <div id="root">${htmlStr}</div>
     <script src="/index.js"></script>
+    <script>
+    const global = {a: 1, b: 2}
+    </script>
   </body>
-  </html>
-  `);
-  // res.send(``)
+  </html>`);
 })
 
 app.listen(3000, () => {
-  console.log('Listening on port 3000');
+  console.log('server is running 3000 port');
 })
