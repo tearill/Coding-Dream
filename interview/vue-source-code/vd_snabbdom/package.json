@@ -1,0 +1,17 @@
+{
+  "name": "vd_snabbdom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "snabbdom": "^0.7.4"
+  }
+}
