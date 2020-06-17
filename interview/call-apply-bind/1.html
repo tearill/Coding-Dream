@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict'
+    function func() {
+      console.log(this);
+    }
+
+    func.call(1); // 基本数据类型，指向其包装类
+    func.call(null); // 非严格模式下指向 window，严格模式下指向 null
+
+    var personLike = {
+      0: '从海',
+      1: '前端大佬',
+      length: 2 // JSON 内置属性
+    }
+    // 给 personLike 添加两个值('海哥', '海贼王')，它的 key 无所谓
+    // let newObj = {
+    //   3: '海哥',
+    //   4: '海贼王'
+    // }
+    // console.log(Object.assign(personLike, newObj))
+    Array.prototype.push.call(personLike, '海哥', '海贼王');
+    console.log(personLike);
+  </script>
+</body>
+</html>
