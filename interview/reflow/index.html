@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    // 触发几次回流 2 次
+    const ele = document.querySelector('.box');
+    ele.style.left = 100 + ele.offsetLeft + 'px';
+    ele.style.top = 100 + ele.offsetTop + 'px';
+    // 浏览器优化机制，队列
+    // offsetLeft offsetTop 布局信息
+    // 读取打破浏览器优化，队列被清空
+    // const currentLeft = ele.offsetLeft,
+    //   currentTop = ele.offsetTop; // 存储触发回流的值
+    // ele.style.left = 100 + currentLeft + 'px';
+    // ele.style.top = 100 + currentTop + 'px';
+  </script>
+</body>
+</html>
