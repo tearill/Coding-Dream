@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 400px;
+      height: 200px;
+      background-color: yellowgreen;
+    }
+
+    .inner {
+      /* position: absolute; */
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin-top: 50%; /* 相对于它的包含块的宽度来计算 200px */
+      padding: 50%; /* 200px */
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">内容</div>
+  </div>
+</body>
+</html>
